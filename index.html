@@ -20,7 +20,7 @@ box-sizing:border-box;
 font-family:'Segoe UI',sans-serif;
 }
 
-/* 🖤 OUTER BACKGROUND (PURE BLACK) */
+/* 🖤 OUTER BACKGROUND */
 body{
 min-height:100vh;
 display:flex;
@@ -31,7 +31,7 @@ padding:20px;
 color:white;
 }
 
-/* 🧊 INNER CARD */
+/* 🧊 CARD WITH IMAGE BACKGROUND */
 .card{
 width:100%;
 max-width:420px;
@@ -40,15 +40,12 @@ border-radius:24px;
 position:relative;
 overflow:hidden;
 
-/* INNER BACKGROUND IMAGE */
 background:url('background.png') center/cover no-repeat;
-
-/* dark overlay for readability */
 box-shadow:0 20px 60px rgba(0,0,0,0.7);
 border:1px solid rgba(255,255,255,0.12);
 }
 
-/* DARK GLASS LAYER ON TOP OF IMAGE */
+/* DARK OVERLAY */
 .card::before{
 content:"";
 position:absolute;
@@ -57,7 +54,6 @@ background:rgba(0,0,0,0.65);
 z-index:0;
 }
 
-/* content sits above overlay */
 .card > *{
 position:relative;
 z-index:1;
@@ -168,15 +164,43 @@ gap:20px;
 margin-top:18px;
 }
 
+/* 🔥 ICON ANIMATION SYSTEM */
 .socials a{
 color:var(--accent);
 font-size:20px;
+position:relative;
+overflow:hidden;
+animation:pulseIcon 2.8s infinite ease-in-out;
 transition:0.3s;
+}
+
+/* pulse effect */
+@keyframes pulseIcon{
+0%,100%{transform:scale(1);}
+50%{transform:scale(1.1);}
+}
+
+/* light sweep animation */
+.socials a::before{
+content:"";
+position:absolute;
+top:0;
+left:-120%;
+width:40%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.7),transparent);
+transform:skewX(-20deg);
+animation:shine 3.8s infinite;
+}
+
+@keyframes shine{
+0%{left:-130%;}
+100%{left:230%;}
 }
 
 .socials a:hover{
 color:white;
-transform:scale(1.15);
+transform:scale(1.2);
 }
 
 /* SAVE BUTTON */
@@ -305,7 +329,7 @@ FN:Achex Tech Hub
 TEL:+254706056515
 TEL:+254704817217
 EMAIL:achexhub@gmail.com
-ORG:Email
+ORG:Embu 
 ADR:Embu, Kenya
 END:VCARD`;
 
