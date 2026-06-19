@@ -56,6 +56,7 @@ box-shadow:0 0 20px #00aaff;
 h1{
 font-size:24px;
 color:#00aaff;
+margin-bottom:5px;
 }
 
 p{
@@ -70,24 +71,9 @@ opacity:0.6;
 margin-bottom:15px;
 }
 
-/* BUTTONS */
-a{
-display:block;
-margin:10px 0;
-padding:12px;
-border-radius:10px;
-text-decoration:none;
-color:white;
-font-weight:600;
-}
-
-.call{background:#00aaff;}
-.whatsapp{background:#25D366;}
-.email{background:#444;}
-
-/* SOCIALS */
+/* SOCIAL ICONS ONLY */
 .socials{
-margin-top:15px;
+margin-top:10px;
 display:flex;
 justify-content:center;
 gap:20px;
@@ -96,6 +82,12 @@ gap:20px;
 .socials a{
 color:#00aaff;
 font-size:20px;
+transition:0.3s;
+}
+
+.socials a:hover{
+transform:scale(1.2);
+color:white;
 }
 
 /* QR SECTION */
@@ -111,22 +103,17 @@ color:#00aaff;
 margin-bottom:15px;
 }
 
-.qr-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:10px;
-}
-
+/* BIG CENTER QR */
 .qr-box{
 background:rgba(255,255,255,0.05);
-padding:10px;
-border-radius:10px;
-font-size:10px;
+padding:15px;
+border-radius:12px;
 }
 
 .qr-box img{
-width:100%;
-border-radius:8px;
+width:200px;
+height:200px;
+border-radius:10px;
 }
 
 /* FOOTER */
@@ -147,34 +134,25 @@ opacity:0.5;
 
 <h1>ACHEX TECH HUB</h1>
 <p>Digital Identity • Tech Solutions</p>
-<div class="location">📍 Nairobi, Kenya</div>
 
-<!-- BUTTONS -->
-<a class="call" href="tel:+254704817217">📞 Call</a>
-<a class="whatsapp" href="https://wa.me/254704817217">💬 WhatsApp</a>
-<a class="email" href="mailto:achexhub@gmail.com">✉️ Email</a>
+<div class="location">📍 Embu, Kenya</div>
 
-<!-- SOCIALS -->
+<!-- SOCIALS ONLY -->
 <div class="socials">
 <a href="https://instagram.com/achex_tech_ke"><i class="fab fa-instagram"></i></a>
 <a href="#"><i class="fab fa-facebook"></i></a>
 <a href="https://x.com/achextech"><i class="fab fa-x-twitter"></i></a>
 </div>
 
-<!-- QR SECTION -->
+<!-- ONLY QR CODE -->
 <div class="qr-section">
 
-<div class="qr-title">📲 Scan & Connect</div>
+<div class="qr-title">SCAN TO VISIT</div>
 
-<div class="qr-grid">
-
-<!-- ONLY WEBSITE QR -->
 <div class="qr-box">
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://achexhub.github.io/achex-tech-hub/">
-<p>Website</p>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://achexhub.github.io/achex-tech-hub/">
 </div>
 
-</div>
 </div>
 
 <div class="footer">
