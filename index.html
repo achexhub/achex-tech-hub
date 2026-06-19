@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -26,6 +25,7 @@ padding:20px;
 color:white;
 }
 
+/* CARD */
 .card{
 width:100%;
 max-width:420px;
@@ -82,7 +82,6 @@ margin-bottom:20px;
 
 .qr-box{
 width:130px;
-flex-shrink:0;
 background:rgba(255,255,255,0.08);
 border:1px solid rgba(255,255,255,0.15);
 border-radius:12px;
@@ -91,7 +90,6 @@ padding:8px;
 
 .qr-box img{
 width:100%;
-display:block;
 border-radius:8px;
 }
 
@@ -110,18 +108,20 @@ display:flex;
 gap:10px;
 align-items:flex-start;
 cursor:pointer;
-transition:0.3s;
+transition:0.2s ease;
 }
 
-.info:hover{
-background:rgba(255,255,255,0.10);
+/* 🔥 iPhone-style tap animation */
+.info:active{
+transform:scale(0.96);
+background:rgba(255,255,255,0.12);
 }
 
 .info i{
 color:white;
 font-size:20px;
-margin-top:2px;
 min-width:20px;
+margin-top:2px;
 }
 
 .label{
@@ -134,7 +134,6 @@ margin-bottom:3px;
 .value{
 font-size:13px;
 line-height:1.4;
-word-break:break-word;
 }
 
 /* SOCIALS */
@@ -148,12 +147,30 @@ margin-top:10px;
 .socials a{
 color:#00aaff;
 font-size:22px;
-transition:.3s;
+transition:0.3s;
 }
 
 .socials a:hover{
 color:white;
 transform:scale(1.15);
+}
+
+/* BUTTON */
+.save-btn{
+margin-top:15px;
+width:100%;
+padding:12px;
+border:none;
+border-radius:12px;
+background:#00aaff;
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:0.2s;
+}
+
+.save-btn:active{
+transform:scale(0.96);
 }
 
 /* FOOTER */
@@ -164,7 +181,7 @@ opacity:0.5;
 margin-top:18px;
 }
 
-/* COPY TOAST */
+/* TOAST */
 #toast{
 position:fixed;
 bottom:20px;
@@ -179,70 +196,41 @@ opacity:0;
 transition:.3s;
 pointer-events:none;
 border:1px solid rgba(255,255,255,.15);
-z-index:9999;
 }
 
 #toast.show{
 opacity:1;
 }
-
-/* MOBILE */
-@media(max-width:480px){
-
-.contact-section{
-gap:10px;
-}
-
-.qr-box{
-width:120px;
-}
-
-.value{
-font-size:12px;
-}
-
-}
 </style>
-
 </head>
 
 <body>
 
 <div class="card">
 
+<!-- TOP -->
 <div class="top">
 
-<img src="profile.png" class="profile" alt="Achex Tech Hub">
+<img src="profile.png" class="profile">
 
 <h1>ACHEX TECH HUB</h1>
 
-<div class="tagline">
-Digital Identity • Tech Solutions
-</div>
-
-<div class="location">
-📍 Embu, Kenya
-</div>
+<div class="tagline">Digital Identity • Tech Solutions</div>
+<div class="location">📍 Embu, Kenya</div>
 
 </div>
 
+<!-- CONTACT -->
 <div class="contact-section">
 
-<!-- QR CODE -->
-
 <div class="qr-box">
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://achexhub.github.io/achex-tech-hub/" alt="QR Code">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://achexhub.github.io/achex-tech-hub/">
 </div>
-
-<!-- CONTACT DETAILS -->
 
 <div class="contact-info">
 
-<div class="info"
-onclick="copyText('+254706056515 / +254704817217')">
-
+<div class="info" onclick="copyText('+254706056515 / +254704817217')">
 <i class="fa-solid fa-mobile-screen-button"></i>
-
 <div>
 <div class="label">Phone</div>
 <div class="value">
@@ -250,47 +238,30 @@ onclick="copyText('+254706056515 / +254704817217')">
 +254704817217
 </div>
 </div>
-
 </div>
 
-<div class="info"
-onclick="copyText('achexhub@gmail.com')">
-
+<div class="info" onclick="copyText('achexhub@gmail.com')">
 <i class="fa-solid fa-envelope-open-text"></i>
-
 <div>
-<div class="label">Achex Tech Hub</div>
-<div class="value">
-achexhub@gmail.com
+<div class="label">Email</div>
+<div class="value">achexhub@gmail.com</div>
 </div>
 </div>
 
 </div>
-
 </div>
 
-</div>
+<!-- SAVE CONTACT BUTTON -->
+<button class="save-btn" onclick="downloadVCF()">
+📇 Save Contact
+</button>
 
-<!-- SOCIAL ICONS -->
-
+<!-- SOCIALS -->
 <div class="socials">
-
-<a href="#">
-<i class="fab fa-facebook-f"></i>
-</a>
-
-<a href="https://instagram.com/achex_tech_ke" target="_blank">
-<i class="fab fa-instagram"></i>
-</a>
-
-<a href="https://vm.tiktok.com/ZS9jQc9FystjS-6hX4l/" target="_blank">
-<i class="fab fa-tiktok"></i>
-</a>
-
-<a href="https://x.com/achextech" target="_blank">
-<i class="fab fa-x-twitter"></i>
-</a>
-
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="https://instagram.com/achex_tech_ke"><i class="fab fa-instagram"></i></a>
+<a href="https://vm.tiktok.com/ZS9jQc9FystjS-6hX4l/"><i class="fab fa-tiktok"></i></a>
+<a href="https://x.com/achextech"><i class="fab fa-x-twitter"></i></a>
 </div>
 
 <div class="footer">
@@ -300,22 +271,42 @@ achexhub@gmail.com
 </div>
 
 <!-- TOAST -->
-
-<div id="toast">✓ Copied to clipboard</div>
+<div id="toast">✓ Copied</div>
 
 <script>
 function copyText(text){
-
 navigator.clipboard.writeText(text);
+showToast("✓ Copied to clipboard");
+}
 
-const toast = document.getElementById('toast');
+/* TOAST */
+function showToast(msg){
+const toast = document.getElementById("toast");
+toast.innerText = msg;
+toast.classList.add("show");
+setTimeout(()=>toast.classList.remove("show"),2000);
+}
 
-toast.classList.add('show');
+/* 📇 SAVE CONTACT (.VCF FILE) */
+function downloadVCF(){
+const vcf =
+`BEGIN:VCARD
+VERSION:3.0
+FN:Achex Tech Hub
+TEL:+254706056515
+TEL:+254704817217
+EMAIL:achexhub@gmail.com
+ORG:Email
+ADR:Embu, Kenya
+END:VCARD`;
 
-setTimeout(()=>{
-toast.classList.remove('show');
-},2000);
+const blob = new Blob([vcf], {type:"text/vcard"});
+const link = document.createElement("a");
+link.href = URL.createObjectURL(blob);
+link.download = "AchexTechHub.vcf";
+link.click();
 
+showToast("📇 Contact Saved");
 }
 </script>
 
