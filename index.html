@@ -13,7 +13,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Segoe UI, sans-serif;
+font-family:'Segoe UI',sans-serif;
 }
 
 body{
@@ -22,26 +22,26 @@ display:flex;
 justify-content:center;
 align-items:center;
 background:#000;
-color:white;
 padding:20px;
+color:white;
 }
 
 .card{
 width:100%;
-max-width:650px;
-padding:30px;
-border-radius:18px;
-border:1px solid rgba(0,170,255,0.25);
+max-width:420px;
+border-radius:20px;
+padding:25px;
 background:
 url('background.png') center/cover no-repeat,
 rgba(0,0,0,0.75);
 background-blend-mode:overlay;
+border:1px solid rgba(0,170,255,0.25);
 box-shadow:0 0 25px rgba(0,170,255,0.2);
 }
 
+/* Profile */
 .top{
 text-align:center;
-margin-bottom:20px;
 }
 
 .profile{
@@ -49,18 +49,18 @@ width:110px;
 height:110px;
 border-radius:50%;
 object-fit:cover;
-margin-bottom:10px;
 border:3px solid #00aaff;
 box-shadow:0 0 20px rgba(0,170,255,0.5);
+margin-bottom:12px;
 }
 
 h1{
+color:#00aaff;
 font-size:24px;
 margin-bottom:5px;
-color:#00aaff;
 }
 
-p{
+.tagline{
 font-size:13px;
 opacity:0.85;
 margin-bottom:5px;
@@ -69,76 +69,80 @@ margin-bottom:5px;
 .location{
 font-size:12px;
 opacity:0.7;
-margin-bottom:15px;
+margin-bottom:20px;
 }
 
-.middle{
+/* QR + Contact Section */
+.contact-section{
 display:flex;
-gap:25px;
+gap:12px;
 align-items:flex-start;
-margin-top:15px;
+margin-bottom:20px;
 }
 
 .qr-box{
-width:180px;
-padding:12px;
+width:130px;
+flex-shrink:0;
 background:rgba(255,255,255,0.08);
-border:1px solid rgba(255,255,255,0.18);
-border-radius:14px;
-box-shadow:0 0 10px rgba(0,0,0,0.5);
+border:1px solid rgba(255,255,255,0.15);
+border-radius:12px;
+padding:8px;
 }
 
 .qr-box img{
 width:100%;
 display:block;
-border-radius:10px;
+border-radius:8px;
 }
 
-.right{
+.contact-info{
 flex:1;
 display:flex;
 flex-direction:column;
-gap:15px;
+gap:12px;
 }
 
 .info{
-display:flex;
-align-items:flex-start;
-gap:12px;
-padding:12px;
 background:rgba(255,255,255,0.05);
 border-radius:12px;
+padding:10px;
+display:flex;
+gap:10px;
+align-items:flex-start;
 }
 
 .info i{
 color:white;
-font-size:22px;
-width:30px;
-text-align:center;
+font-size:20px;
 margin-top:2px;
-}
-
-.text{
-font-size:14px;
-line-height:1.5;
+min-width:20px;
 }
 
 .label{
+font-size:12px;
 font-weight:600;
-margin-bottom:4px;
+opacity:0.8;
+margin-bottom:3px;
 }
 
+.value{
+font-size:13px;
+line-height:1.4;
+word-break:break-word;
+}
+
+/* Socials */
 .socials{
 display:flex;
 justify-content:center;
 gap:22px;
-margin-top:25px;
+margin-top:10px;
 }
 
 .socials a{
 color:#00aaff;
 font-size:22px;
-transition:0.3s;
+transition:.3s;
 }
 
 .socials a:hover{
@@ -147,27 +151,10 @@ transform:scale(1.15);
 }
 
 .footer{
-margin-top:20px;
+text-align:center;
 font-size:11px;
 opacity:0.5;
-text-align:center;
-}
-
-@media(max-width:700px){
-
-.middle{
-flex-direction:column;
-align-items:center;
-}
-
-.right{
-width:100%;
-}
-
-.qr-box{
-width:220px;
-}
-
+margin-top:18px;
 }
 </style>
 
@@ -179,37 +166,46 @@ width:220px;
 
 <div class="top">
 
-<img src="profile.png" alt="Achex Tech Hub" class="profile">
+<img src="profile.png" class="profile" alt="Achex Tech Hub">
 
 <h1>ACHEX TECH HUB</h1>
 
-<p>Digital Identity • Tech Solutions</p>
+<div class="tagline">
+Digital Identity • Tech Solutions
+</div>
 
-<div class="location">📍 Embu, Kenya</div>
+<div class="location">
+📍 Embu, Kenya
+</div>
 
 </div>
 
-<div class="middle">
+<div class="contact-section">
 
 <div class="qr-box">
 <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://achexhub.github.io/achex-tech-hub/" alt="QR Code">
 </div>
 
-<div class="right">
+<div class="contact-info">
 
 <div class="info">
 <i class="fa-solid fa-mobile-screen-button"></i>
-<div class="text">
+<div>
 <div class="label">Phone</div>
-+254706056515 / +254704817217
+<div class="value">
++254706056515<br>
++254704817217
+</div>
 </div>
 </div>
 
 <div class="info">
 <i class="fa-solid fa-envelope-open-text"></i>
-<div class="text">
+<div>
 <div class="label">Achex Tech Hub</div>
+<div class="value">
 achexhub@gmail.com
+</div>
 </div>
 </div>
 
