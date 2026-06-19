@@ -3,114 +3,195 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Achex Tech Hub</title>
+<title>ACHEX TECH HUB</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #0d0d0d;
-  color: white;
-  text-align: center;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
 }
 
-.container {
-  padding: 30px 15px;
-  max-width: 600px;
-  margin: auto;
+body, html{
+height:100%;
+width:100%;
+overflow-x:hidden;
 }
 
-/* LOGO */
-.logo {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  border: 3px solid gold;
-  object-fit: cover;
+/* Background */
+.background{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:url('background.png') center/cover no-repeat;
+filter:brightness(0.35);
+z-index:-1;
 }
 
-/* TITLE */
-h1 {
-  color: gold;
-  margin: 15px 0 5px;
+/* Center container */
+.container{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+padding:20px;
 }
 
-/* CONTACT TEXT */
-.contact {
-  margin: 10px 0;
-  color: #ccc;
-  font-size: 14px;
+/* Glass card */
+.card{
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(12px);
+border:1px solid rgba(0,170,255,0.3);
+border-radius:20px;
+padding:30px;
+width:100%;
+max-width:420px;
+text-align:center;
+color:white;
+box-shadow:0 0 25px rgba(0,170,255,0.4);
+animation:fadeIn 1.2s ease;
 }
 
-/* ICONS */
-.icons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 20px;
+/* Profile */
+.profile{
+width:120px;
+height:120px;
+border-radius:50%;
+border:3px solid #00aaff;
+object-fit:cover;
+box-shadow:0 0 20px #00aaff;
+margin-bottom:15px;
 }
 
-.icons a img {
-  width: 40px;
-  height: 40px;
-  transition: 0.3s;
+/* Name */
+h1{
+font-size:24px;
+margin-bottom:5px;
 }
 
-.icons a img:hover {
-  transform: scale(1.2);
+p{
+font-size:14px;
+opacity:0.8;
+margin-bottom:15px;
+}
+
+/* Buttons */
+.btn{
+display:block;
+margin:10px 0;
+padding:12px;
+border-radius:10px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+transition:0.3s;
+}
+
+.call{background:#00aaff;}
+.whatsapp{background:#25D366;}
+.email{background:#444;}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* Social icons */
+.socials{
+margin-top:15px;
+display:flex;
+justify-content:center;
+gap:15px;
+}
+
+.socials a{
+color:#00aaff;
+font-size:20px;
+transition:0.3s;
+}
+
+.socials a:hover{
+transform:scale(1.2);
+color:white;
+}
+
+/* Hidden socials (Facebook & LinkedIn) */
+.hidden{
+display:none;
+}
+
+/* Animation */
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(30px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* Responsive */
+@media(max-width:500px){
+.card{padding:20px;}
+.profile{width:100px;height:100px;}
 }
 </style>
-
 </head>
 
 <body>
 
+<div class="background"></div>
+
 <div class="container">
+<div class="card">
 
-  <!-- LOGO (YOU WILL REPLACE THIS LINK) -->
-  <img class="logo" src="https://via.placeholder.com/150" alt="Logo">
+<!-- Profile -->
+<img src="profile.png" class="profile" alt="ACHEX TECH HUB">
 
-  <h1>Achex Tech Hub</h1>
-  <p>Smart Tech Solutions | Sales & Support</p>
+<h1>ACHEX TECH HUB</h1>
+<p>Make a Step</p>
+<p>📍 Embu | Tech Solutions & Laptops</p>
 
-  <!-- CONTACT INFO (EDITABLE) -->
-  <div class="contact">📞 +254 706 056 515</div>
-  <div class="contact">📧 achexhub@gmail.com</div>
+<!-- Buttons -->
+<a class="btn call" href="tel:+254706056515">
+📞 Call Now
+</a>
 
-  <!-- SOCIAL ICONS (EDIT LINKS ONLY) -->
-  <div class="icons">
+<a class="btn whatsapp" href="https://wa.me/254706056515" target="_blank">
+💬 WhatsApp Us
+</a>
 
-    <a href="https://wa.me/254706056515">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-    </a>
+<a class="btn email" href="mailto:achexhub@gmail.com">
+✉️ Email Us
+</a>
 
-    <a href="mailto:achexhub@gmail.com">
-      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
-    </a>
+<!-- Socials -->
+<div class="socials">
 
-    <a href="#">
-      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
-    </a>
+<a href="https://www.instagram.com/achex_tech_ke?igsh=MXdweWF1dTYzcnY4eA==" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
 
-    <a href="#">
-      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png">
-    </a>
+<a href="https://vm.tiktok.com/ZS9jQc9FystjS-6hX4l/" target="_blank">
+<i class="fab fa-tiktok"></i>
+</a>
 
-    <a href="#">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
-    </a>
+<a href="https://x.com/achextech" target="_blank">
+<i class="fab fa-x-twitter"></i>
+</a>
 
-    <a href="#">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png">
-    </a>
+<!-- Hidden for now -->
+<a class="hidden" href="#">
+<i class="fab fa-facebook"></i>
+</a>
 
-    <a href="#">
-      <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png">
-    </a>
+<a class="hidden" href="#">
+<i class="fab fa-linkedin"></i>
+</a>
 
-  </div>
+</div>
 
+</div>
 </div>
 
 </body>
