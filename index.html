@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ACHEX TECH HUB</title>
+<title>Achex Tech Hub</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -12,92 +12,80 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, sans-serif;
+font-family:Segoe UI, sans-serif;
 }
 
-body, html{
-height:100%;
-width:100%;
-overflow-x:hidden;
-}
-
-/* Background */
-.background{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:url('background.png') center/cover no-repeat;
-filter:brightness(0.35);
-z-index:-1;
-}
-
-/* Center container */
-.container{
+body{
+height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-height:100vh;
-padding:20px;
+background:linear-gradient(135deg, #050814, #000);
+color:white;
 }
 
-/* Glass card */
+/* Card */
 .card{
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(12px);
-border:1px solid rgba(0,170,255,0.3);
-border-radius:20px;
+width:90%;
+max-width:400px;
+background:rgba(255,255,255,0.06);
+backdrop-filter:blur(14px);
+border:1px solid rgba(0,170,255,0.25);
+border-radius:18px;
 padding:30px;
-width:100%;
-max-width:420px;
 text-align:center;
-color:white;
-box-shadow:0 0 25px rgba(0,170,255,0.4);
-animation:fadeIn 1.2s ease;
+box-shadow:0 0 25px rgba(0,170,255,0.15);
 }
 
 /* Profile */
-.profile{
-width:120px;
-height:120px;
+img{
+width:110px;
+height:110px;
 border-radius:50%;
 border:3px solid #00aaff;
 object-fit:cover;
-box-shadow:0 0 20px #00aaff;
 margin-bottom:15px;
+box-shadow:0 0 20px #00aaff;
 }
 
 /* Name */
 h1{
 font-size:24px;
+color:#00aaff;
 margin-bottom:5px;
 }
 
 p{
-font-size:14px;
-opacity:0.8;
-margin-bottom:15px;
+font-size:13px;
+opacity:0.75;
+margin-bottom:5px;
+}
+
+.location{
+font-size:12px;
+opacity:0.6;
+margin-bottom:20px;
 }
 
 /* Buttons */
-.btn{
+a{
 display:block;
 margin:10px 0;
 padding:12px;
 border-radius:10px;
 text-decoration:none;
 color:white;
-font-weight:bold;
-transition:0.3s;
+font-weight:600;
+transition:0.25s;
 }
 
-.call{background:#00aaff;}
 .whatsapp{background:#25D366;}
+.call{background:#00aaff;}
 .email{background:#444;}
 
-.btn:hover{
-transform:scale(1.05);
+a:hover{
+transform:translateY(-2px);
+opacity:0.9;
 }
 
 /* Social icons */
@@ -105,7 +93,7 @@ transform:scale(1.05);
 margin-top:15px;
 display:flex;
 justify-content:center;
-gap:15px;
+gap:20px;
 }
 
 .socials a{
@@ -115,83 +103,43 @@ transition:0.3s;
 }
 
 .socials a:hover{
-transform:scale(1.2);
 color:white;
+transform:scale(1.2);
 }
 
-/* Hidden socials (Facebook & LinkedIn) */
-.hidden{
-display:none;
-}
-
-/* Animation */
-@keyframes fadeIn{
-from{opacity:0; transform:translateY(30px);}
-to{opacity:1; transform:translateY(0);}
-}
-
-/* Responsive */
-@media(max-width:500px){
-.card{padding:20px;}
-.profile{width:100px;height:100px;}
+/* Footer */
+.footer{
+margin-top:15px;
+font-size:11px;
+opacity:0.5;
 }
 </style>
 </head>
 
 <body>
 
-<div class="background"></div>
-
-<div class="container">
 <div class="card">
 
-<!-- Profile -->
-<img src="profile.png" class="profile" alt="ACHEX TECH HUB">
+<img src="profile.png" alt="profile">
 
 <h1>ACHEX TECH HUB</h1>
-<p>Make a Step</p>
-<p>📍 Embu | Tech Solutions & Laptops</p>
+<p>Digital Identity • Tech Enthusiast</p>
+<div class="location">📍 Nairobi, Kenya</div>
 
-<!-- Buttons -->
-<a class="btn call" href="tel:+254706056515">
-📞 Call Now
-</a>
+<a class="call" href="tel:+254706056515">📞 Call</a>
+<a class="whatsapp" href="https://wa.me/254706056515">💬 WhatsApp</a>
+<a class="email" href="mailto:achexhub@gmail.com">✉️ Email</a>
 
-<a class="btn whatsapp" href="https://wa.me/254706056515" target="_blank">
-💬 WhatsApp Us
-</a>
-
-<a class="btn email" href="mailto:achexhub@gmail.com">
-✉️ Email Us
-</a>
-
-<!-- Socials -->
 <div class="socials">
-
-<a href="https://www.instagram.com/achex_tech_ke?igsh=MXdweWF1dTYzcnY4eA==" target="_blank">
-<i class="fab fa-instagram"></i>
-</a>
-
-<a href="https://vm.tiktok.com/ZS9jQc9FystjS-6hX4l/" target="_blank">
-<i class="fab fa-tiktok"></i>
-</a>
-
-<a href="https://x.com/achextech" target="_blank">
-<i class="fab fa-x-twitter"></i>
-</a>
-
-<!-- Hidden for now -->
-<a class="hidden" href="#">
-<i class="fab fa-facebook"></i>
-</a>
-
-<a class="hidden" href="#">
-<i class="fab fa-linkedin"></i>
-</a>
-
+<a href="https://instagram.com/achex_tech_ke"><i class="fab fa-instagram"></i></a>
+<a href="https://vm.tiktok.com/ZS9jQc9FystjS-6hX4l/"><i class="fab fa-tiktok"></i></a>
+<a href="https://x.com/achextech"><i class="fab fa-x-twitter"></i></a>
 </div>
 
+<div class="footer">
+© 2026 Achex Tech Hub
 </div>
+
 </div>
 
 </body>
