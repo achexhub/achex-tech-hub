@@ -15,45 +15,30 @@ box-sizing:border-box;
 font-family:Segoe UI, sans-serif;
 }
 
-/* PAGE BACKGROUND */
+/* MAIN BACKGROUND (NOW BLACK) */
 body{
 height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background:url('background.png') center/cover no-repeat;
-position:relative;
+background:#000;
 color:white;
-}
-
-/* DARK OVERLAY */
-body::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.65);
 }
 
 /* CARD */
 .card{
 position:relative;
-z-index:1;
 width:90%;
 max-width:400px;
 padding:30px;
 text-align:center;
 border-radius:18px;
 border:1px solid rgba(0,170,255,0.25);
-
-/* OPTION B: IMAGE INSIDE CARD */
 background:
 url('background.png') center/cover no-repeat,
 rgba(0,0,0,0.6);
 
-background-blend-mode: overlay;
+background-blend-mode:overlay;
 
 box-shadow:0 0 25px rgba(0,170,255,0.2);
 }
@@ -150,7 +135,7 @@ opacity:0.5;
 
 <p>Digital Identity • Tech Solutions</p>
 
-<div class="location">📍 Nairobi, Kenya</div>
+<div class="location">📍 Embu, Kenya</div>
 
 <!-- BUTTONS -->
 <a class="call" href="tel:+254706056515">📞 Call</a>
