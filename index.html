@@ -15,21 +15,36 @@ box-sizing:border-box;
 font-family:Segoe UI, sans-serif;
 }
 
+/* Background image */
 body{
 height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background:linear-gradient(135deg, #050814, #000);
+background:url('background.png') center/cover no-repeat;
+position:relative;
 color:white;
+}
+
+/* Dark overlay for readability */
+body::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.65);
 }
 
 /* Card */
 .card{
+position:relative;
+z-index:1;
 width:90%;
 max-width:400px;
 background:rgba(255,255,255,0.06);
-backdrop-filter:blur(14px);
+backdrop-filter:blur(12px);
 border:1px solid rgba(0,170,255,0.25);
 border-radius:18px;
 padding:30px;
@@ -57,7 +72,7 @@ margin-bottom:5px;
 
 p{
 font-size:13px;
-opacity:0.75;
+opacity:0.8;
 margin-bottom:5px;
 }
 
@@ -79,8 +94,8 @@ font-weight:600;
 transition:0.25s;
 }
 
-.whatsapp{background:#25D366;}
 .call{background:#00aaff;}
+.whatsapp{background:#25D366;}
 .email{background:#444;}
 
 a:hover{
@@ -88,7 +103,7 @@ transform:translateY(-2px);
 opacity:0.9;
 }
 
-/* Social icons */
+/* Socials */
 .socials{
 margin-top:15px;
 display:flex;
@@ -120,24 +135,28 @@ opacity:0.5;
 
 <div class="card">
 
+<!-- PROFILE IMAGE -->
 <img src="profile.png" alt="profile">
 
 <h1>ACHEX TECH HUB</h1>
-<p>Digital Identity • Tech Enthusiast</p>
+<p>Digital Identity • Tech Solutions</p>
 <div class="location">📍 Nairobi, Kenya</div>
 
+<!-- CONTACT BUTTONS -->
 <a class="call" href="tel:+254706056515">📞 Call</a>
 <a class="whatsapp" href="https://wa.me/254706056515">💬 WhatsApp</a>
 <a class="email" href="mailto:achexhub@gmail.com">✉️ Email</a>
 
+<!-- SOCIAL ICONS -->
 <div class="socials">
 <a href="https://instagram.com/achex_tech_ke"><i class="fab fa-instagram"></i></a>
 <a href="https://vm.tiktok.com/ZS9jQc9FystjS-6hX4l/"><i class="fab fa-tiktok"></i></a>
 <a href="https://x.com/achextech"><i class="fab fa-x-twitter"></i></a>
 </div>
 
+<!-- FOOTER -->
 <div class="footer">
-© 2026 Achex Tech Hub
+© 2026 Achex Tech Hub • All Rights Reserved
 </div>
 
 </div>
