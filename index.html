@@ -66,6 +66,7 @@ opacity:0.85;
 margin-bottom:5px;
 }
 
+/* LOCATION (NO ICON) */
 .location{
 font-size:12px;
 opacity:0.7;
@@ -111,7 +112,6 @@ cursor:pointer;
 transition:0.2s ease;
 }
 
-/* 🔥 iPhone-style tap animation */
 .info:active{
 transform:scale(0.96);
 background:rgba(255,255,255,0.12);
@@ -155,18 +155,23 @@ color:white;
 transform:scale(1.15);
 }
 
-/* BUTTON */
+/* SAVE BUTTON (NEW COLOR + BELOW SOCIALS) */
 .save-btn{
 margin-top:15px;
 width:100%;
 padding:12px;
 border:none;
 border-radius:12px;
-background:#00aaff;
+background:#1f2937; /* dark professional gray */
 color:white;
 font-weight:bold;
 cursor:pointer;
 transition:0.2s;
+border:1px solid rgba(255,255,255,0.15);
+}
+
+.save-btn:hover{
+background:#111827;
 }
 
 .save-btn:active{
@@ -208,7 +213,6 @@ opacity:1;
 
 <div class="card">
 
-<!-- TOP -->
 <div class="top">
 
 <img src="profile.png" class="profile">
@@ -216,7 +220,8 @@ opacity:1;
 <h1>ACHEX TECH HUB</h1>
 
 <div class="tagline">Digital Identity • Tech Solutions</div>
-<div class="location">📍 Embu, Kenya</div>
+
+<div class="location">Embu, Kenya</div>
 
 </div>
 
@@ -251,11 +256,6 @@ opacity:1;
 </div>
 </div>
 
-<!-- SAVE CONTACT BUTTON -->
-<button class="save-btn" onclick="downloadVCF()">
-📇 Save Contact
-</button>
-
 <!-- SOCIALS -->
 <div class="socials">
 <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -263,6 +263,11 @@ opacity:1;
 <a href="https://vm.tiktok.com/ZS9jQc9FystjS-6hX4l/"><i class="fab fa-tiktok"></i></a>
 <a href="https://x.com/achextech"><i class="fab fa-x-twitter"></i></a>
 </div>
+
+<!-- SAVE CONTACT (NOW BELOW SOCIALS) -->
+<button class="save-btn" onclick="downloadVCF()">
+📇 Save Contact
+</button>
 
 <div class="footer">
 © 2026 Achex Tech Hub
@@ -279,7 +284,6 @@ navigator.clipboard.writeText(text);
 showToast("✓ Copied to clipboard");
 }
 
-/* TOAST */
 function showToast(msg){
 const toast = document.getElementById("toast");
 toast.innerText = msg;
@@ -287,7 +291,7 @@ toast.classList.add("show");
 setTimeout(()=>toast.classList.remove("show"),2000);
 }
 
-/* 📇 SAVE CONTACT (.VCF FILE) */
+/* VCF DOWNLOAD */
 function downloadVCF(){
 const vcf =
 `BEGIN:VCARD
