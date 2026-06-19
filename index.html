@@ -1,55 +1,170 @@
-<!-- Replace ONLY the contact section, toast and script parts in your current HTML -->
+<!DOCTYPE html>
 
-<!-- CONTACT SECTION -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACHEX TECH HUB</title>
 
-<div class="contact-section">
-
-<div class="qr-box">
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://achexhub.github.io/achex-tech-hub/" alt="QR Code">
-</div>
-
-<div class="contact-info">
-
-<div class="info"
-onclick="copyText('+254706056515 / +254704817217')"
-style="cursor:pointer;">
-
-<i class="fa-solid fa-mobile-screen-button"></i>
-
-<div>
-<div class="label">Phone</div>
-<div class="value">
-+254706056515<br>
-+254704817217
-</div>
-</div>
-
-</div>
-
-<div class="info"
-onclick="copyText('achexhub@gmail.com')"
-style="cursor:pointer;">
-
-<i class="fa-solid fa-envelope-open-text"></i>
-
-<div>
-<div class="label">Achex Tech Hub</div>
-<div class="value">
-achexhub@gmail.com
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- TOAST MESSAGE -->
-
-<div id="toast">✓ Copied to clipboard</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#000;
+padding:20px;
+color:white;
+}
+
+.card{
+width:100%;
+max-width:420px;
+border-radius:20px;
+padding:25px;
+background:
+url('background.png') center/cover no-repeat,
+rgba(0,0,0,0.75);
+background-blend-mode:overlay;
+border:1px solid rgba(0,170,255,0.25);
+box-shadow:0 0 25px rgba(0,170,255,0.20);
+}
+
+/* PROFILE */
+.top{
+text-align:center;
+}
+
+.profile{
+width:110px;
+height:110px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid #00aaff;
+box-shadow:0 0 20px rgba(0,170,255,0.5);
+margin-bottom:12px;
+}
+
+h1{
+color:#00aaff;
+font-size:24px;
+margin-bottom:5px;
+}
+
+.tagline{
+font-size:13px;
+opacity:0.85;
+margin-bottom:5px;
+}
+
+.location{
+font-size:12px;
+opacity:0.7;
+margin-bottom:20px;
+}
+
+/* CONTACT SECTION */
+.contact-section{
+display:flex;
+gap:12px;
+align-items:flex-start;
+margin-bottom:20px;
+}
+
+.qr-box{
+width:130px;
+flex-shrink:0;
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.15);
+border-radius:12px;
+padding:8px;
+}
+
+.qr-box img{
+width:100%;
+display:block;
+border-radius:8px;
+}
+
+.contact-info{
+flex:1;
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.info{
+background:rgba(255,255,255,0.05);
+border-radius:12px;
+padding:10px;
+display:flex;
+gap:10px;
+align-items:flex-start;
+cursor:pointer;
+transition:0.3s;
+}
+
+.info:hover{
+background:rgba(255,255,255,0.10);
+}
+
+.info i{
+color:white;
+font-size:20px;
+margin-top:2px;
+min-width:20px;
+}
+
+.label{
+font-size:12px;
+font-weight:600;
+opacity:0.8;
+margin-bottom:3px;
+}
+
+.value{
+font-size:13px;
+line-height:1.4;
+word-break:break-word;
+}
+
+/* SOCIALS */
+.socials{
+display:flex;
+justify-content:center;
+gap:22px;
+margin-top:10px;
+}
+
+.socials a{
+color:#00aaff;
+font-size:22px;
+transition:.3s;
+}
+
+.socials a:hover{
+color:white;
+transform:scale(1.15);
+}
+
+/* FOOTER */
+.footer{
+text-align:center;
+font-size:11px;
+opacity:0.5;
+margin-top:18px;
+}
+
+/* COPY TOAST */
 #toast{
 position:fixed;
 bottom:20px;
@@ -70,21 +185,139 @@ z-index:9999;
 #toast.show{
 opacity:1;
 }
+
+/* MOBILE */
+@media(max-width:480px){
+
+.contact-section{
+gap:10px;
+}
+
+.qr-box{
+width:120px;
+}
+
+.value{
+font-size:12px;
+}
+
+}
 </style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="top">
+
+<img src="profile.png" class="profile" alt="Achex Tech Hub">
+
+<h1>ACHEX TECH HUB</h1>
+
+<div class="tagline">
+Digital Identity • Tech Solutions
+</div>
+
+<div class="location">
+📍 Embu, Kenya
+</div>
+
+</div>
+
+<div class="contact-section">
+
+<!-- QR CODE -->
+
+<div class="qr-box">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://achexhub.github.io/achex-tech-hub/" alt="QR Code">
+</div>
+
+<!-- CONTACT DETAILS -->
+
+<div class="contact-info">
+
+<div class="info"
+onclick="copyText('+254706056515 / +254704817217')">
+
+<i class="fa-solid fa-mobile-screen-button"></i>
+
+<div>
+<div class="label">Phone</div>
+<div class="value">
++254706056515<br>
++254704817217
+</div>
+</div>
+
+</div>
+
+<div class="info"
+onclick="copyText('achexhub@gmail.com')">
+
+<i class="fa-solid fa-envelope-open-text"></i>
+
+<div>
+<div class="label">Achex Tech Hub</div>
+<div class="value">
+achexhub@gmail.com
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- SOCIAL ICONS -->
+
+<div class="socials">
+
+<a href="#">
+<i class="fab fa-facebook-f"></i>
+</a>
+
+<a href="https://instagram.com/achex_tech_ke" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://vm.tiktok.com/ZS9jQc9FystjS-6hX4l/" target="_blank">
+<i class="fab fa-tiktok"></i>
+</a>
+
+<a href="https://x.com/achextech" target="_blank">
+<i class="fab fa-x-twitter"></i>
+</a>
+
+</div>
+
+<div class="footer">
+© 2026 Achex Tech Hub
+</div>
+
+</div>
+
+<!-- TOAST -->
+
+<div id="toast">✓ Copied to clipboard</div>
 
 <script>
 function copyText(text){
 
 navigator.clipboard.writeText(text);
 
-const toast = document.getElementById("toast");
+const toast = document.getElementById('toast');
 
-toast.innerText = "✓ Copied to clipboard";
-toast.classList.add("show");
+toast.classList.add('show');
 
 setTimeout(()=>{
-toast.classList.remove("show");
+toast.classList.remove('show');
 },2000);
 
 }
 </script>
+
+</body>
+</html>
