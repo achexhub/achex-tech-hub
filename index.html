@@ -15,7 +15,7 @@ box-sizing:border-box;
 font-family:Segoe UI, sans-serif;
 }
 
-/* Background image */
+/* PAGE BACKGROUND */
 body{
 height:100vh;
 display:flex;
@@ -26,7 +26,7 @@ position:relative;
 color:white;
 }
 
-/* Dark overlay for readability */
+/* DARK OVERLAY */
 body::before{
 content:"";
 position:absolute;
@@ -37,22 +37,28 @@ height:100%;
 background:rgba(0,0,0,0.65);
 }
 
-/* Card */
+/* CARD */
 .card{
 position:relative;
 z-index:1;
 width:90%;
 max-width:400px;
-background:rgba(255,255,255,0.06);
-backdrop-filter:blur(12px);
-border:1px solid rgba(0,170,255,0.25);
-border-radius:18px;
 padding:30px;
 text-align:center;
-box-shadow:0 0 25px rgba(0,170,255,0.15);
+border-radius:18px;
+border:1px solid rgba(0,170,255,0.25);
+
+/* OPTION B: IMAGE INSIDE CARD */
+background:
+url('background.png') center/cover no-repeat,
+rgba(0,0,0,0.6);
+
+background-blend-mode: overlay;
+
+box-shadow:0 0 25px rgba(0,170,255,0.2);
 }
 
-/* Profile */
+/* PROFILE */
 img{
 width:110px;
 height:110px;
@@ -63,26 +69,28 @@ margin-bottom:15px;
 box-shadow:0 0 20px #00aaff;
 }
 
-/* Name */
+/* NAME */
 h1{
 font-size:24px;
 color:#00aaff;
 margin-bottom:5px;
 }
 
+/* TEXT */
 p{
 font-size:13px;
 opacity:0.8;
 margin-bottom:5px;
 }
 
+/* LOCATION */
 .location{
 font-size:12px;
 opacity:0.6;
 margin-bottom:20px;
 }
 
-/* Buttons */
+/* BUTTONS */
 a{
 display:block;
 margin:10px 0;
@@ -103,7 +111,7 @@ transform:translateY(-2px);
 opacity:0.9;
 }
 
-/* Socials */
+/* SOCIALS */
 .socials{
 margin-top:15px;
 display:flex;
@@ -122,7 +130,7 @@ color:white;
 transform:scale(1.2);
 }
 
-/* Footer */
+/* FOOTER */
 .footer{
 margin-top:15px;
 font-size:11px;
@@ -135,19 +143,21 @@ opacity:0.5;
 
 <div class="card">
 
-<!-- PROFILE IMAGE -->
+<!-- PROFILE -->
 <img src="profile.png" alt="profile">
 
-<h1>TEST UPDATE WORKING 🔥</h1>
+<h1>ACHEX TECH HUB</h1>
+
 <p>Digital Identity • Tech Solutions</p>
+
 <div class="location">📍 Nairobi, Kenya</div>
 
-<!-- CONTACT BUTTONS -->
+<!-- BUTTONS -->
 <a class="call" href="tel:+254706056515">📞 Call</a>
 <a class="whatsapp" href="https://wa.me/254706056515">💬 WhatsApp</a>
 <a class="email" href="mailto:achexhub@gmail.com">✉️ Email</a>
 
-<!-- SOCIAL ICONS -->
+<!-- SOCIALS -->
 <div class="socials">
 <a href="https://instagram.com/achex_tech_ke"><i class="fab fa-instagram"></i></a>
 <a href="https://vm.tiktok.com/ZS9jQc9FystjS-6hX4l/"><i class="fab fa-tiktok"></i></a>
