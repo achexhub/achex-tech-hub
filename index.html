@@ -29,33 +29,34 @@ padding:20px;
 /* CARD */
 .card{
 width:100%;
-max-width:420px;
+max-width:450px;
 padding:30px;
-text-align:center;
 border-radius:18px;
-border:1px solid rgba(0,170,255,0.25);
+border:1px solid rgba(255,255,255,0.08);
 background:
 url('background.png') center/cover no-repeat,
-rgba(0,0,0,0.6);
+rgba(0,0,0,0.75);
 
 background-blend-mode:overlay;
-box-shadow:0 0 25px rgba(0,170,255,0.2);
+box-shadow:0 0 25px rgba(0,0,0,0.6);
 }
 
-/* PROFILE */
+/* TOP CONTENT */
+.top{
+text-align:center;
+margin-bottom:20px;
+}
+
 img{
 width:110px;
 height:110px;
 border-radius:50%;
-border:3px solid #00aaff;
 object-fit:cover;
-margin-bottom:15px;
-box-shadow:0 0 20px #00aaff;
+margin-bottom:10px;
 }
 
 h1{
 font-size:24px;
-color:#00aaff;
 margin-bottom:5px;
 }
 
@@ -71,49 +72,51 @@ opacity:0.6;
 margin-bottom:15px;
 }
 
-/* SOCIAL ICONS ONLY */
+/* MIDDLE SECTION (QR LEFT + SPACE RIGHT) */
+.middle{
+display:flex;
+justify-content:flex-start;
+align-items:center;
+gap:20px;
+margin-bottom:20px;
+}
+
+/* QR LEFT */
+.qr-box{
+width:150px;
+padding:10px;
+background:rgba(255,255,255,0.05);
+border-radius:12px;
+}
+
+.qr-box img{
+width:100%;
+border-radius:10px;
+}
+
+/* RIGHT SIDE RESERVED (empty for later) */
+.right-space{
+flex:1;
+height:150px;
+}
+
+/* SOCIALS */
 .socials{
-margin-top:10px;
 display:flex;
 justify-content:center;
-gap:20px;
+gap:18px;
+margin-top:10px;
 }
 
 .socials a{
-color:#00aaff;
+color:#aaa;
 font-size:20px;
 transition:0.3s;
 }
 
 .socials a:hover{
-transform:scale(1.2);
 color:white;
-}
-
-/* QR SECTION */
-.qr-section{
-margin-top:25px;
-padding-top:15px;
-border-top:1px solid rgba(255,255,255,0.1);
-}
-
-.qr-title{
-font-size:14px;
-color:#00aaff;
-margin-bottom:15px;
-}
-
-/* BIG CENTER QR */
-.qr-box{
-background:rgba(255,255,255,0.05);
-padding:15px;
-border-radius:12px;
-}
-
-.qr-box img{
-width:200px;
-height:200px;
-border-radius:10px;
+transform:scale(1.2);
 }
 
 /* FOOTER */
@@ -121,6 +124,7 @@ border-radius:10px;
 margin-top:15px;
 font-size:11px;
 opacity:0.5;
+text-align:center;
 }
 </style>
 </head>
@@ -129,7 +133,9 @@ opacity:0.5;
 
 <div class="card">
 
-<!-- PROFILE -->
+<!-- TOP -->
+<div class="top">
+
 <img src="profile.png" alt="profile">
 
 <h1>ACHEX TECH HUB</h1>
@@ -137,24 +143,30 @@ opacity:0.5;
 
 <div class="location">📍 Embu, Kenya</div>
 
-<!-- SOCIALS ONLY -->
-<div class="socials">
-<a href="https://instagram.com/achex_tech_ke"><i class="fab fa-instagram"></i></a>
-<a href="#"><i class="fab fa-facebook"></i></a>
-<a href="https://x.com/achextech"><i class="fab fa-x-twitter"></i></a>
 </div>
 
-<!-- ONLY QR CODE -->
-<div class="qr-section">
-
-<div class="qr-title">SCAN TO VISIT</div>
+<!-- MIDDLE (QR LEFT) -->
+<div class="middle">
 
 <div class="qr-box">
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://achexhub.github.io/achex-tech-hub/">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://achexhub.github.io/achex-tech-hub/">
 </div>
+
+<div class="right-space"></div>
 
 </div>
 
+<!-- SOCIALS -->
+<div class="socials">
+
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="https://instagram.com/achex_tech_ke"><i class="fab fa-instagram"></i></a>
+<a href="https://vm.tiktok.com/ZS9jQc9FystjS-6hX4l/"><i class="fab fa-tiktok"></i></a>
+<a href="https://x.com/achextech"><i class="fab fa-x-twitter"></i></a>
+
+</div>
+
+<!-- FOOTER -->
 <div class="footer">
 © 2026 Achex Tech Hub
 </div>
