@@ -20,7 +20,7 @@ box-sizing:border-box;
 font-family:'Segoe UI',sans-serif;
 }
 
-/* 🖤 OUTER BACKGROUND */
+/* OUTER BACKGROUND */
 body{
 min-height:100vh;
 display:flex;
@@ -31,7 +31,7 @@ padding:20px;
 color:white;
 }
 
-/* 🧊 CARD WITH IMAGE BACKGROUND */
+/* CARD */
 .card{
 width:100%;
 max-width:420px;
@@ -74,7 +74,7 @@ box-shadow:0 0 20px rgba(61,213,255,0.25);
 margin-bottom:12px;
 }
 
-/* GOLD + WHITE NAME */
+/* NAME */
 h1{
 font-size:24px;
 margin-bottom:5px;
@@ -129,7 +129,7 @@ padding:10px;
 display:flex;
 gap:10px;
 cursor:pointer;
-transition:0.2s;
+transition:0.25s;
 }
 
 .info:active{
@@ -137,6 +137,7 @@ transform:scale(0.97);
 background:rgba(255,255,255,0.10);
 }
 
+/* ICONS */
 .info i{
 color:var(--accent);
 font-size:19px;
@@ -144,6 +145,7 @@ min-width:20px;
 margin-top:2px;
 }
 
+/* LABELS */
 .label{
 font-size:12px;
 font-weight:600;
@@ -164,43 +166,17 @@ gap:20px;
 margin-top:18px;
 }
 
-/* 🔥 ICON ANIMATION SYSTEM */
 .socials a{
 color:var(--accent);
 font-size:20px;
-position:relative;
-overflow:hidden;
-animation:pulseIcon 2.8s infinite ease-in-out;
-transition:0.3s;
+transition:0.25s;
 }
 
-/* pulse effect */
-@keyframes pulseIcon{
-0%,100%{transform:scale(1);}
-50%{transform:scale(1.1);}
-}
-
-/* light sweep animation */
-.socials a::before{
-content:"";
-position:absolute;
-top:0;
-left:-120%;
-width:40%;
-height:100%;
-background:linear-gradient(120deg,transparent,rgba(255,255,255,0.7),transparent);
-transform:skewX(-20deg);
-animation:shine 3.8s infinite;
-}
-
-@keyframes shine{
-0%{left:-130%;}
-100%{left:230%;}
-}
-
+/* ⭐ BEST UX: HOVER GLOW ONLY */
 .socials a:hover{
-color:white;
-transform:scale(1.2);
+color:#fff;
+transform:scale(1.15);
+text-shadow:0 0 10px rgba(61,213,255,0.8);
 }
 
 /* SAVE BUTTON */
@@ -329,7 +305,7 @@ FN:Achex Tech Hub
 TEL:+254706056515
 TEL:+254704817217
 EMAIL:achexhub@gmail.com
-ORG:Embu 
+ORG:Email
 ADR:Embu, Kenya
 END:VCARD`;
 
