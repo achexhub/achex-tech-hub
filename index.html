@@ -8,6 +8,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+
+/* 🎨 GLOBAL THEME COLOR */
+:root{
+  --accent:#3dd5ff;
+}
+
 *{
 margin:0;
 padding:0;
@@ -15,7 +21,7 @@ box-sizing:border-box;
 font-family:'Segoe UI',sans-serif;
 }
 
-/* 🌌 ANIMATED BACKGROUND GLOW */
+/* 🌌 BACKGROUND */
 body{
 min-height:100vh;
 display:flex;
@@ -28,13 +34,13 @@ color:white;
 position:relative;
 }
 
-/* moving glow */
+/* glow animation */
 body::before{
 content:"";
 position:absolute;
 width:600px;
 height:600px;
-background:radial-gradient(circle, rgba(0,170,255,0.25), transparent 60%);
+background:radial-gradient(circle, rgba(61,213,255,0.25), transparent 60%);
 top:-150px;
 left:-150px;
 animation:moveGlow 12s infinite alternate ease-in-out;
@@ -46,7 +52,7 @@ content:"";
 position:absolute;
 width:500px;
 height:500px;
-background:radial-gradient(circle, rgba(0,170,255,0.15), transparent 60%);
+background:radial-gradient(circle, rgba(61,213,255,0.15), transparent 60%);
 bottom:-150px;
 right:-150px;
 animation:moveGlow2 15s infinite alternate ease-in-out;
@@ -73,7 +79,7 @@ background:rgba(255,255,255,0.06);
 backdrop-filter:blur(18px);
 -webkit-backdrop-filter:blur(18px);
 border:1px solid rgba(255,255,255,0.15);
-box-shadow:0 0 30px rgba(0,170,255,0.15);
+box-shadow:0 0 30px rgba(61,213,255,0.15);
 z-index:1;
 }
 
@@ -87,13 +93,13 @@ width:110px;
 height:110px;
 border-radius:50%;
 object-fit:cover;
-border:2px solid rgba(0,170,255,0.6);
-box-shadow:0 0 25px rgba(0,170,255,0.3);
+border:2px solid var(--accent);
+box-shadow:0 0 25px rgba(61,213,255,0.3);
 margin-bottom:12px;
 }
 
 h1{
-color:#00aaff;
+color:var(--accent);
 font-size:24px;
 margin-bottom:5px;
 }
@@ -159,7 +165,7 @@ background:rgba(255,255,255,0.12);
 }
 
 .info i{
-color:#00aaff;
+color:var(--accent);
 font-size:20px;
 min-width:20px;
 margin-top:2px;
@@ -186,7 +192,7 @@ margin-top:15px;
 }
 
 .socials a{
-color:#00aaff;
+color:var(--accent);
 font-size:20px;
 transition:0.3s;
 }
@@ -203,7 +209,7 @@ width:100%;
 padding:12px;
 border:none;
 border-radius:12px;
-background:linear-gradient(90deg,#00aaff,#0066ff);
+background:linear-gradient(90deg,var(--accent),#0066ff);
 color:white;
 font-weight:bold;
 cursor:pointer;
@@ -242,6 +248,7 @@ border:1px solid rgba(255,255,255,.15);
 #toast.show{
 opacity:1;
 }
+
 </style>
 </head>
 
@@ -249,7 +256,6 @@ opacity:1;
 
 <div class="card">
 
-<!-- PROFILE -->
 <div class="top">
 <img src="profile.png" class="profile">
 <h1>ACHEX TECH HUB</h1>
@@ -257,7 +263,6 @@ opacity:1;
 <div class="location">Embu, Kenya</div>
 </div>
 
-<!-- CONTACT -->
 <div class="contact-section">
 
 <div class="qr-box">
@@ -285,7 +290,6 @@ opacity:1;
 </div>
 </div>
 
-<!-- SOCIALS (WITH WHATSAPP ADDED) -->
 <div class="socials">
 <a href="#"><i class="fab fa-facebook-f"></i></a>
 <a href="https://wa.me/254704817217"><i class="fab fa-whatsapp"></i></a>
@@ -294,7 +298,6 @@ opacity:1;
 <a href="https://x.com/achextech"><i class="fab fa-x-twitter"></i></a>
 </div>
 
-<!-- SAVE CONTACT -->
 <button class="save-btn" onclick="downloadVCF()">
 📇 Save Contact
 </button>
@@ -305,7 +308,6 @@ opacity:1;
 
 </div>
 
-<!-- TOAST -->
 <div id="toast">✓ Copied</div>
 
 <script>
