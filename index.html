@@ -15,21 +15,21 @@ box-sizing:border-box;
 font-family:Segoe UI, sans-serif;
 }
 
-/* MAIN BACKGROUND (NOW BLACK) */
+/* BACKGROUND */
 body{
-height:100vh;
+min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
 background:#000;
 color:white;
+padding:20px;
 }
 
 /* CARD */
 .card{
-position:relative;
-width:90%;
-max-width:400px;
+width:100%;
+max-width:420px;
 padding:30px;
 text-align:center;
 border-radius:18px;
@@ -39,7 +39,6 @@ url('background.png') center/cover no-repeat,
 rgba(0,0,0,0.6);
 
 background-blend-mode:overlay;
-
 box-shadow:0 0 25px rgba(0,170,255,0.2);
 }
 
@@ -54,25 +53,21 @@ margin-bottom:15px;
 box-shadow:0 0 20px #00aaff;
 }
 
-/* NAME */
 h1{
 font-size:24px;
 color:#00aaff;
-margin-bottom:5px;
 }
 
-/* TEXT */
 p{
 font-size:13px;
 opacity:0.8;
 margin-bottom:5px;
 }
 
-/* LOCATION */
 .location{
 font-size:12px;
 opacity:0.6;
-margin-bottom:20px;
+margin-bottom:15px;
 }
 
 /* BUTTONS */
@@ -84,17 +79,11 @@ border-radius:10px;
 text-decoration:none;
 color:white;
 font-weight:600;
-transition:0.25s;
 }
 
 .call{background:#00aaff;}
 .whatsapp{background:#25D366;}
 .email{background:#444;}
-
-a:hover{
-transform:translateY(-2px);
-opacity:0.9;
-}
 
 /* SOCIALS */
 .socials{
@@ -107,12 +96,37 @@ gap:20px;
 .socials a{
 color:#00aaff;
 font-size:20px;
-transition:0.3s;
 }
 
-.socials a:hover{
-color:white;
-transform:scale(1.2);
+/* QR SECTION */
+.qr-section{
+margin-top:25px;
+padding-top:15px;
+border-top:1px solid rgba(255,255,255,0.1);
+}
+
+.qr-title{
+font-size:14px;
+color:#00aaff;
+margin-bottom:15px;
+}
+
+.qr-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+}
+
+.qr-box{
+background:rgba(255,255,255,0.05);
+padding:10px;
+border-radius:10px;
+font-size:10px;
+}
+
+.qr-box img{
+width:100%;
+border-radius:8px;
 }
 
 /* FOOTER */
@@ -132,26 +146,39 @@ opacity:0.5;
 <img src="profile.png" alt="profile">
 
 <h1>ACHEX TECH HUB</h1>
-
 <p>Digital Identity • Tech Solutions</p>
-
-<div class="location">📍 Embu, Kenya</div>
+<div class="location">📍 Nairobi, Kenya</div>
 
 <!-- BUTTONS -->
-<a class="call" href="tel:+254706056515">📞 Call</a>
-<a class="whatsapp" href="https://wa.me/254706056515">💬 WhatsApp</a>
+<a class="call" href="tel:+254704817217">📞 Call</a>
+<a class="whatsapp" href="https://wa.me/254704817217">💬 WhatsApp</a>
 <a class="email" href="mailto:achexhub@gmail.com">✉️ Email</a>
 
 <!-- SOCIALS -->
 <div class="socials">
 <a href="https://instagram.com/achex_tech_ke"><i class="fab fa-instagram"></i></a>
-<a href="https://vm.tiktok.com/ZS9jQc9FystjS-6hX4l/"><i class="fab fa-tiktok"></i></a>
+<a href="#"><i class="fab fa-facebook"></i></a>
 <a href="https://x.com/achextech"><i class="fab fa-x-twitter"></i></a>
 </div>
 
-<!-- FOOTER -->
+<!-- QR SECTION -->
+<div class="qr-section">
+
+<div class="qr-title">📲 Scan & Connect</div>
+
+<div class="qr-grid">
+
+<!-- ONLY WEBSITE QR -->
+<div class="qr-box">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://achexhub.github.io/achex-tech-hub/">
+<p>Website</p>
+</div>
+
+</div>
+</div>
+
 <div class="footer">
-© 2026 Achex Tech Hub • All Rights Reserved
+© 2026 Achex Tech Hub
 </div>
 
 </div>
