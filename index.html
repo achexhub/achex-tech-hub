@@ -26,9 +26,9 @@ display:flex;
 justify-content:center;
 align-items:center;
 background:#000;
-overflow:hidden;
 padding:18px;
 color:white;
+overflow:hidden;
 }
 
 /* AURORA */
@@ -63,11 +63,15 @@ border:1px solid rgba(255,255,255,0.10);
 box-shadow:0 25px 70px rgba(0,0,0,0.85);
 }
 
-/* PROFILE */
+/* TOP */
+.top{
+text-align:center;
+}
+
 .profile-wrap{
 width:110px;
 height:110px;
-margin:0 auto;
+margin:0 auto 10px;
 border-radius:50%;
 padding:3px;
 background:conic-gradient(from 0deg,#3dd5ff,#ff00ff,#ffd700,#3dd5ff);
@@ -78,26 +82,48 @@ animation:spin 4s linear infinite;
 to{transform:rotate(360deg);}
 }
 
-.profile-inner{width:100%;height:100%;border-radius:50%;background:#000;padding:3px;}
-.profile{width:100%;height:100%;border-radius:50%;object-fit:cover;}
+.profile-inner{
+width:100%;
+height:100%;
+border-radius:50%;
+background:#000;
+padding:3px;
+}
+
+.profile{
+width:100%;
+height:100%;
+border-radius:50%;
+object-fit:cover;
+}
 
 h1{
-text-align:center;
 font-size:22px;
 margin-top:10px;
+text-align:center;
 background:linear-gradient(90deg,#ffd700,#fff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
-.tagline{text-align:center;font-size:13px;opacity:0.8;}
-.location{text-align:center;font-size:12px;margin-top:4px;opacity:0.8;}
-.status{text-align:center;font-size:11px;color:#7CFF7C;margin-top:6px;}
+.tagline,.location,.status{
+text-align:center;
+font-size:12px;
+opacity:0.85;
+margin-top:4px;
+}
 
-/* QR */
+/* MAIN ROW (QR LEFT + CONTACT RIGHT) */
+.contact-section{
+display:flex;
+gap:14px;
+align-items:center;
+margin-top:18px;
+}
+
+/* QR LEFT */
 .qr-box{
 width:140px;
-margin:15px auto;
 padding:8px;
 border-radius:18px;
 background:rgba(255,255,255,0.08);
@@ -112,15 +138,15 @@ background:#fff;
 padding:6px;
 }
 
-/* CONTACT */
+/* CONTACT RIGHT */
 .contact-info{
+flex:1;
 display:flex;
 flex-direction:column;
-gap:12px;
-margin-top:10px;
+gap:10px;
 }
 
-/* INFO */
+/* INFO BOX (SAME BOX FOR ALL CONTACTS) */
 .info{
 display:flex;
 gap:10px;
@@ -131,7 +157,9 @@ border-left:3px solid #3dd5ff;
 cursor:pointer;
 }
 
-.info i{font-size:18px;margin-top:2px;}
+/* ICONS (RESTORED ORIGINAL COLORS) */
+.phone-icon{color:#3dd5ff;}
+.email-icon{color:#ffd700;}
 
 .label{font-size:12px;opacity:0.7;}
 .value{font-size:13px;}
@@ -140,7 +168,6 @@ cursor:pointer;
 .value-link{
 color:inherit;
 text-decoration:none;
-display:inline-block;
 }
 
 .phone-link{
@@ -151,22 +178,41 @@ border-bottom:2px dotted #3dd5ff;
 border-bottom:2px dotted #ffd700;
 }
 
-/* SOCIAL */
+/* SOCIALS (RESTORED ORIGINAL STYLE) */
 .socials{
 display:flex;
 justify-content:center;
 gap:14px;
-margin-top:15px;
+margin-top:18px;
 }
 
 .socials a{
-width:38px;height:38px;
+width:38px;
+height:38px;
 display:flex;
 align-items:center;
 justify-content:center;
 border-radius:10px;
 background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.08);
+transition:0.25s;
+text-decoration:none;
 }
+
+.socials a:hover{
+transform:scale(1.15);
+}
+
+/* ICON COLORS (RESTORED) */
+.fa-facebook-f{color:#1877F2;}
+.fa-whatsapp{color:#25D366;}
+.fa-instagram{
+background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+.fa-tiktok{color:#fff;text-shadow:1px 0 red,-1px 0 cyan;}
+.fa-x-twitter{color:#fff;}
 
 /* BUTTONS */
 .btn-row{
@@ -209,6 +255,7 @@ border:1px solid rgba(255,255,255,0.2);
 
 <div class="card">
 
+<div class="top">
 <div class="profile-wrap">
 <div class="profile-inner">
 <img src="profile.png" class="profile">
@@ -219,6 +266,10 @@ border:1px solid rgba(255,255,255,0.2);
 <div class="tagline">Digital Identity • Tech Solutions</div>
 <div class="location">📍 Embu, Kenya</div>
 <div class="status">🟢 Open for Business</div>
+</div>
+
+<!-- QR + CONTACT ROW -->
+<div class="contact-section">
 
 <div class="qr-box">
 <img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://achexhub.github.io/achex-tech-hub/">
@@ -227,48 +278,45 @@ border:1px solid rgba(255,255,255,0.2);
 <div class="contact-info">
 
 <div class="info" onclick="copyText('+254706056515')">
-<i class="fa-solid fa-mobile-screen-button"></i>
+<i class="fa-solid fa-mobile-screen-button phone-icon"></i>
 <div>
 <div class="label">Phone</div>
-<div class="value">
 <a class="value-link phone-link" href="tel:+254706056515" onclick="event.stopPropagation()">
 +254706056515
 </a>
 </div>
 </div>
-</div>
 
 <div class="info" onclick="copyText('+254704817217')">
-<i class="fa-solid fa-mobile-screen-button"></i>
+<i class="fa-solid fa-mobile-screen-button phone-icon"></i>
 <div>
 <div class="label">Phone</div>
-<div class="value">
 <a class="value-link phone-link" href="tel:+254704817217" onclick="event.stopPropagation()">
 +254704817217
 </a>
 </div>
 </div>
-</div>
 
 <div class="info" onclick="copyText('achexhub@gmail.com')">
-<i class="fa-solid fa-envelope"></i>
+<i class="fa-solid fa-envelope email-icon"></i>
 <div>
 <div class="label">Email</div>
-<div class="value">
 <a class="value-link email-link" href="mailto:achexhub@gmail.com" onclick="event.stopPropagation()">
 achexhub@gmail.com
 </a>
 </div>
 </div>
-</div>
 
 </div>
+</div>
 
+<!-- SOCIALS -->
 <div class="socials">
+<a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
 <a href="https://wa.me/254704817217"><i class="fab fa-whatsapp"></i></a>
-<a href="#"><i class="fab fa-facebook-f"></i></a>
 <a href="https://instagram.com/achex_tech_ke"><i class="fab fa-instagram"></i></a>
-<a href="https://x.com/achextech"><i class="fab fa-x-twitter"></i></a>
+<a href="https://tiktok.com"><i class="fab fa-tiktok"></i></a>
+<a href="https://x.com"><i class="fab fa-x-twitter"></i></a>
 </div>
 
 <div class="btn-row">
