@@ -63,11 +63,7 @@ border:1px solid rgba(255,255,255,0.10);
 box-shadow:0 25px 70px rgba(0,0,0,0.85);
 }
 
-/* TOP */
-.top{
-text-align:center;
-}
-
+/* PROFILE (NO SPIN - ONLY COLOR GLOW) */
 .profile-wrap{
 width:110px;
 height:110px;
@@ -75,11 +71,12 @@ margin:0 auto 10px;
 border-radius:50%;
 padding:3px;
 background:conic-gradient(from 0deg,#3dd5ff,#ff00ff,#ffd700,#3dd5ff);
-animation:spin 4s linear infinite;
+animation:glow 4s linear infinite;
 }
 
-@keyframes spin{
-to{transform:rotate(360deg);}
+@keyframes glow{
+0%{filter:hue-rotate(0deg);}
+100%{filter:hue-rotate(360deg);}
 }
 
 .profile-inner{
@@ -97,10 +94,11 @@ border-radius:50%;
 object-fit:cover;
 }
 
+/* TEXT */
 h1{
 font-size:22px;
-margin-top:10px;
 text-align:center;
+margin-top:10px;
 background:linear-gradient(90deg,#ffd700,#fff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
@@ -113,15 +111,7 @@ opacity:0.85;
 margin-top:4px;
 }
 
-/* MAIN ROW (QR LEFT + CONTACT RIGHT) */
-.contact-section{
-display:flex;
-gap:14px;
-align-items:center;
-margin-top:18px;
-}
-
-/* QR LEFT */
+/* QR (UNCHANGED DESIGN) */
 .qr-box{
 width:140px;
 padding:8px;
@@ -138,7 +128,15 @@ background:#fff;
 padding:6px;
 }
 
-/* CONTACT RIGHT */
+/* CONTACT ROW */
+.contact-section{
+display:flex;
+gap:14px;
+align-items:center;
+margin-top:18px;
+}
+
+/* CONTACT BOX */
 .contact-info{
 flex:1;
 display:flex;
@@ -146,7 +144,7 @@ flex-direction:column;
 gap:10px;
 }
 
-/* INFO BOX (SAME BOX FOR ALL CONTACTS) */
+/* INFO BOX */
 .info{
 display:flex;
 gap:10px;
@@ -157,7 +155,7 @@ border-left:3px solid #3dd5ff;
 cursor:pointer;
 }
 
-/* ICONS (RESTORED ORIGINAL COLORS) */
+/* ICONS */
 .phone-icon{color:#3dd5ff;}
 .email-icon{color:#ffd700;}
 
@@ -178,7 +176,14 @@ border-bottom:2px dotted #3dd5ff;
 border-bottom:2px dotted #ffd700;
 }
 
-/* SOCIALS (RESTORED ORIGINAL STYLE) */
+/* DIVIDER BETWEEN PHONE NUMBERS */
+.phone-divider{
+height:1px;
+background:rgba(255,255,255,0.2);
+margin:6px 0;
+}
+
+/* SOCIALS (UNCHANGED) */
 .socials{
 display:flex;
 justify-content:center;
@@ -194,16 +199,9 @@ align-items:center;
 justify-content:center;
 border-radius:10px;
 background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.08);
-transition:0.25s;
-text-decoration:none;
 }
 
-.socials a:hover{
-transform:scale(1.15);
-}
-
-/* ICON COLORS (RESTORED) */
+/* ICON COLORS */
 .fa-facebook-f{color:#1877F2;}
 .fa-whatsapp{color:#25D366;}
 .fa-instagram{
@@ -255,7 +253,7 @@ border:1px solid rgba(255,255,255,0.2);
 
 <div class="card">
 
-<div class="top">
+<!-- PROFILE -->
 <div class="profile-wrap">
 <div class="profile-inner">
 <img src="profile.png" class="profile">
@@ -266,9 +264,8 @@ border:1px solid rgba(255,255,255,0.2);
 <div class="tagline">Digital Identity • Tech Solutions</div>
 <div class="location">📍 Embu, Kenya</div>
 <div class="status">🟢 Open for Business</div>
-</div>
 
-<!-- QR + CONTACT ROW -->
+<!-- QR + CONTACT -->
 <div class="contact-section">
 
 <div class="qr-box">
@@ -277,34 +274,37 @@ border:1px solid rgba(255,255,255,0.2);
 
 <div class="contact-info">
 
-<div class="info" onclick="copyText('+254706056515')">
+<!-- PHONE BOX (BOTH NUMBERS TOGETHER) -->
+<div class="info" onclick="copyText('+254706056515 | +254704817217')">
 <i class="fa-solid fa-mobile-screen-button phone-icon"></i>
+
 <div>
 <div class="label">Phone</div>
+
 <a class="value-link phone-link" href="tel:+254706056515" onclick="event.stopPropagation()">
 +254706056515
 </a>
-</div>
-</div>
 
-<div class="info" onclick="copyText('+254704817217')">
-<i class="fa-solid fa-mobile-screen-button phone-icon"></i>
-<div>
-<div class="label">Phone</div>
+<div class="phone-divider"></div>
+
 <a class="value-link phone-link" href="tel:+254704817217" onclick="event.stopPropagation()">
 +254704817217
 </a>
+
 </div>
 </div>
 
+<!-- EMAIL -->
 <div class="info" onclick="copyText('achexhub@gmail.com')">
 <i class="fa-solid fa-envelope email-icon"></i>
+
 <div>
 <div class="label">Email</div>
 <a class="value-link email-link" href="mailto:achexhub@gmail.com" onclick="event.stopPropagation()">
 achexhub@gmail.com
 </a>
 </div>
+
 </div>
 
 </div>
@@ -319,6 +319,7 @@ achexhub@gmail.com
 <a href="https://x.com"><i class="fab fa-x-twitter"></i></a>
 </div>
 
+<!-- BUTTONS -->
 <div class="btn-row">
 <button class="save-btn" onclick="downloadVCF()">Save Contact</button>
 <button class="share-btn" onclick="shareCard()">Share</button>
