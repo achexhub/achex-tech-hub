@@ -1,162 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Achex Tech Hub</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Achex Tech Hub</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-    .card {
-      background: #111827;
-      padding: 20px;
-      border-radius: 15px;
-      width: 320px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
 
-    .logo {
-      width: 80px;
-      border-radius: 10px;
-    }
+body {
+  background: radial-gradient(circle at top, #1f2937, #0f172a);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
 
-    .qr {
-      width: 180px;
-      margin: 10px 0;
-      border-radius: 10px;
-    }
+.card {
+  width: 340px;
+  background: rgba(17, 24, 39, 0.9);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  animation: float 4s ease-in-out infinite;
+}
 
-    button {
-      width: 100%;
-      margin: 5px 0;
-      padding: 10px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      background: #2563eb;
-      color: white;
-      font-weight: bold;
-    }
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
 
-    button:hover {
-      background: #1d4ed8;
-    }
+.logo {
+  width: 80px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
 
-    #toast {
-      position: fixed;
-      bottom: 20px;
-      background: black;
-      padding: 10px 15px;
-      border-radius: 8px;
-      opacity: 0;
-      transition: 0.3s;
-    }
+h1 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
 
-    #toast.show {
-      opacity: 1;
-    }
-  </style>
+.tag {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+
+.location {
+  font-size: 12px;
+  margin-bottom: 15px;
+  opacity: 0.7;
+}
+
+.qr {
+  width: 160px;
+  border-radius: 12px;
+  margin: 10px 0;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.blue { background: #2563eb; color: white; }
+.green { background: #16a34a; color: white; }
+.purple { background: #7c3aed; color: white; }
+
+.btn:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+#toast {
+  position: fixed;
+  bottom: 20px;
+  background: #000;
+  padding: 10px 15px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+#toast.show {
+  opacity: 1;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="card">
+<div class="card">
 
-    <img src="profile.png" class="logo" alt="logo">
+  <img src="profile.png" class="logo" />
 
-    <h2>ACHEX TECH HUB</h2>
-    <p>Digital Identity • Tech Solutions</p>
-    <p>📍 Embu, Kenya</p>
+  <h1>ACHEX TECH HUB</h1>
+  <div class="tag">Digital Identity • Tech Solutions</div>
+  <div class="location">📍 Embu, Kenya</div>
 
-    <img
-      class="qr"
-      src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://achexhub.github.io/achex-tech-hub/"
-      alt="QR Code"
-    />
+  <img class="qr"
+    src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://achexhub.github.io/achex-tech-hub/"
+  />
 
-    <button onclick="copyText('+254706056515')">Copy Phone</button>
-    <button onclick="copyText('achexhub@gmail.com')">Copy Email</button>
-    <button onclick="saveContact()">Save Contact</button>
-    <button onclick="shareCard()">Share</button>
+  <button class="btn blue" onclick="copyText('+254706056515')">Copy Phone</button>
+  <button class="btn blue" onclick="copyText('achexhub@gmail.com')">Copy Email</button>
+  <button class="btn green" onclick="saveContact()">Save Contact</button>
+  <button class="btn purple" onclick="shareCard()">Share Card</button>
 
-  </div>
+</div>
 
-  <div id="toast"></div>
+<div id="toast"></div>
 
-  <script>
-    const toast = document.getElementById("toast");
+<script>
+const toast = document.getElementById("toast");
 
-    function showToast(msg) {
-      toast.textContent = msg;
-      toast.classList.add("show");
+function show(msg) {
+  toast.textContent = msg;
+  toast.classList.add("show");
+  setTimeout(() => toast.classList.remove("show"), 2000);
+}
 
-      setTimeout(() => {
-        toast.classList.remove("show");
-      }, 2000);
-    }
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    show("Copied ✔");
+  } catch {
+    show("Copy failed");
+  }
+}
 
-    async function copyText(text) {
-      try {
-        await navigator.clipboard.writeText(text);
-        showToast("Copied ✔");
-      } catch {
-        showToast("Copy failed");
-      }
-    }
-
-    async function shareCard() {
-      const data = {
+async function shareCard() {
+  try {
+    if (navigator.share) {
+      await navigator.share({
         title: "Achex Tech Hub",
         text: "Digital Identity • Tech Solutions",
         url: window.location.href
-      };
-
-      try {
-        if (navigator.share) {
-          await navigator.share(data);
-        } else {
-          await copyText(window.location.href);
-        }
-      } catch {
-        await copyText(window.location.href);
-      }
+      });
+    } else {
+      await copyText(window.location.href);
     }
+  } catch {
+    await copyText(window.location.href);
+  }
+}
 
-    function saveContact() {
-      const vcf =
-`BEGIN:VCARD
+function saveContact() {
+  const vcf = `BEGIN:VCARD
 VERSION:3.0
 FN:Achex Tech Hub
 TEL:+254706056515
 TEL:+254704817217
 EMAIL:achexhub@gmail.com
-ORG:Achex Tech Hub
+ORG:Email 
 ADR:Embu, Kenya
 END:VCARD`;
 
-      const blob = new Blob([vcf], { type: "text/vcard" });
-      const url = URL.createObjectURL(blob);
+  const blob = new Blob([vcf], { type: "text/vcard" });
+  const url = URL.createObjectURL(blob);
 
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "AchexTechHub.vcf";
-      a.click();
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "achex.vcf";
+  a.click();
 
-      URL.revokeObjectURL(url);
-      showToast("Contact saved 📇");
-    }
-  </script>
+  URL.revokeObjectURL(url);
+  show("Contact saved 📇");
+}
+</script>
 
 </body>
 </html>
