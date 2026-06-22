@@ -1,117 +1,116 @@
 import { useRef } from "react";
 
 function App() {
-  const toastRef = useRef<HTMLDivElement>(null);
+  const toastRef = useRef<HTMLDivElement | null>(null);
 
-  function copyText(text: string) {
-    navigator.clipboard.writeText(text);
-    showToast("✓ Copied to clipboard");
-  }
-
-  function showToast(msg: string) {
+  const showToast = (msg: string) => {
     const toast = toastRef.current;
     if (!toast) return;
-    toast.innerText = msg;
-    toast.classList.add("show");
-    setTimeout(() => toast.classList.remove("show"), 2200);
-  }
 
-  async function shareCard() {
-    const shareData = {
+    toast.textContent = msg;
+    toast.classList.add("show");
+
+    setTimeout(() => {
+      toast.classList.remove("show");
+    }, 2000);
+  };
+
+  const copyText = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      showToast("✓ Copied to clipboard");
+    } catch {
+      showToast("Copy failed");
+    }
+  };
+
+  const copyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      showToast("🔗 Link copied");
+    } catch {
+      showToast("Copy failed");
+    }
+  };
+
+  const shareCard = async () => {
+    const data = {
       title: "Achex Tech Hub",
       text: "Digital Identity • Tech Solutions | Embu, Kenya",
       url: window.location.href,
     };
-    if (navigator.share && navigator.canShare?.(shareData)) {
-      try { await navigator.share(shareData); }
-      catch (err) { if ((err as Error).name !== "AbortError") copyLink(); }
-    } else { copyLink(); }
-  }
 
-  function copyLink() {
-    navigator.clipboard.writeText(window.location.href).then(() => {
-      showToast("🔗 Link copied to clipboard");
-    });
-  }
+    try {
+      if (navigator.share && navigator.canShare?.(data)) {
+        await navigator.share(data);
+      } else {
+        await copyLink();
+      }
+    } catch {
+      await copyLink();
+    }
+  };
 
-  function downloadVCF() {
-    const vcf = `BEGIN:VCARD\nVERSION:3.0\nFN:Achex Tech Hub\nTEL:+254706056515\nTEL:+254704817217\nEMAIL:achexhub@gmail.com\nORG:Achex Tech Hub\nADR:Embu, Kenya\nEND:VCARD`;
-    const blob = new Blob([vcf], { type: "text/vcard" });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "AchexTechHub.vcf";
-    link.click();
-    showToast("📇 Contact Saved");
-  }
+  const downloadVCF = () => {
+    const vcf = `BEGIN:VCARD
+VERSION:3.0
+FN:Achex Tech Hub
+TEL:+254706056515
+TEL:+254704817217
+EMAIL:achexhub@gmail.com
+ORG:Achex Tech Hub
+ADR:Embu, Kenya
+END:VCARD`;
+
+    const blob = new Blob([vcf], { type: "text/vcard;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "AchexTechHub.vcf";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    URL.revokeObjectURL(url);
+
+    showToast("📇 Contact saved");
+  };
 
   return (
     <>
       <div className="card">
         <div className="top">
-          <div className="profile-wrapper">
-            <img src="/profile.png" className="profile" alt="Achex Tech Hub Logo" />
-          </div>
-          <div className="status-badge">
-            <span className="status-dot"></span>Open for Business
-          </div>
+          <img src="/profile.png" alt="logo" className="profile" />
+
           <h1>ACHEX TECH HUB</h1>
-          <div className="tagline">Digital Identity • Tech Solutions</div>
-          <div className="location"><i className="fa-solid fa-location-dot"></i> Embu, Kenya</div>
+          <p>Digital Identity • Tech Solutions</p>
+          <p>📍 Embu, Kenya</p>
         </div>
 
-        <div className="divider"></div>
-
-        <div className="contact-section">
-          <div className="qr-box">
-            <div className="qr-corners">
-              <span className="corner tl"></span><span className="corner tr"></span>
-              <span className="corner bl"></span><span className="corner br"></span>
-              <img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&color=000000&bgcolor=ffffff&data=https://achexhub.github.io/achex-tech-hub/&margin=6" alt="QR Code" />
-            </div>
-            <div className="qr-label">Scan to Visit</div>
-          </div>
-
-          <div className="contact-info">
-            <div className="info phone" onClick={() => copyText("+254706056515 / +254704817217")}>
-              <i className="fa-solid fa-mobile-screen-button" style={{ color: "#3dd5ff" }}></i>
-              <div>
-                <div className="label">Phone</div>
-                <div className="value">
-                  <a href="tel:+254706056515" className="tel-link" onClick={e => e.stopPropagation()}>+254 706 056 515</a><br />
-                  <a href="tel:+254704817217" className="tel-link" onClick={e => e.stopPropagation()}>+254 704 817 217</a>
-                </div>
-              </div>
-            </div>
-
-            <div className="info email" onClick={() => copyText("achexhub@gmail.com")}>
-              <i className="fa-solid fa-envelope-open-text" style={{ color: "#ffd700" }}></i>
-              <div>
-                <div className="label">Email</div>
-                <div className="value">
-                  <a href="mailto:achexhub@gmail.com" className="tel-link" style={{ borderBottomColor: "rgba(255,215,0,0.4)" }} onClick={e => e.stopPropagation()}>achexhub@gmail.com</a>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="qr-section">
+          <img
+            src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://achexhub.github.io/achex-tech-hub/"
+            alt="QR Code"
+          />
         </div>
 
-        <div className="socials-label"><span></span><p>Follow Us</p><span></span></div>
-        <div className="socials">
-          <a href="#" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
-          <a href="https://wa.me/254704817217" target="_blank" rel="noreferrer"><i className="fab fa-whatsapp"></i></a>
-          <a href="https://instagram.com/achex_tech_ke" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>
-          <a href="https://vm.tiktok.com/ZS9jQc9FystjS-6hX4l/" target="_blank" rel="noreferrer"><i className="fab fa-tiktok"></i></a>
-          <a href="https://x.com/achextech" target="_blank" rel="noreferrer"><i className="fab fa-x-twitter"></i></a>
-        </div>
+        <div className="buttons">
+          <button onClick={() => copyText("+254706056515")}>
+            Copy Phone
+          </button>
 
-        <div className="action-btns">
-          <button className="save-btn" onClick={downloadVCF}>📇 Save Contact</button>
-          <button className="share-btn" onClick={shareCard}><i className="fa-solid fa-share-nodes"></i> Share Card</button>
-        </div>
+          <button onClick={() => copyText("achexhub@gmail.com")}>
+            Copy Email
+          </button>
 
-        <div className="footer">© 2026 Achex Tech Hub</div>
+          <button onClick={downloadVCF}>Save Contact</button>
+
+          <button onClick={shareCard}>Share Card</button>
+        </div>
       </div>
-      <div id="toast" ref={toastRef}></div>
+
+      <div ref={toastRef} id="toast"></div>
     </>
   );
 }
