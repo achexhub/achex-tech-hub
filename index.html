@@ -162,19 +162,22 @@ animation:pulse 1.5s infinite;
 50%{transform:scale(1.6);opacity:0.5;}
 100%{transform:scale(1);opacity:1;}
 }
-  .top-divider{
+.top-divider{
 width:180px;
-height:2px;
-margin:14px auto 0;
+height:3px;
+margin:16px auto 0;
 border-radius:999px;
-
 background:linear-gradient(
 90deg,
-transparent,
-rgba(61,213,255,.30),
-rgba(255,215,0,.30),
-transparent
+transparent 0%,
+#3dd5ff 30%,
+#ffd700 50%,
+#3dd5ff 70%,
+transparent 100%
 );
+box-shadow:
+0 0 8px rgba(61,213,255,.35),
+0 0 8px rgba(255,215,0,.25);
 }
 
 /* CONTACT */
@@ -339,7 +342,14 @@ margin:18px 0 8px;
 .follow .line{
 flex:1;
 height:1px;
-background:linear-gradient(to right,transparent,rgba(255,255,255,0.4),transparent);
+background:linear-gradient(
+to right,
+transparent,
+rgba(61,213,255,.35),
+rgba(255,215,0,.35),
+rgba(61,213,255,.35),
+transparent
+);
 }
 
 .follow .text{
@@ -481,9 +491,8 @@ Embu, Kenya
 <div class="dot"></div>
 Open for Business
 </div>
-
-<div class="top-divider"></div>
-
+<div class="follow">
+    <div class="line"></div>
 </div>
 
 <div class="contact-section">
