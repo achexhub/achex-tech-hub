@@ -5,373 +5,194 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ACHEX TECH HUB</title>
 
-<meta name="theme-color" content="#0a0a0a">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-
-/* GLOBAL */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:Arial, sans-serif;
 }
 
-body{
-min-height:100vh;
+body, html{
+height:100%;
+width:100%;
+overflow-x:hidden;
+}
+
+/* Background */
+.background{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:url('background.png') center/cover no-repeat;
+filter:brightness(0.35);
+z-index:-1;
+}
+
+/* Center container */
+.container{
 display:flex;
 justify-content:center;
 align-items:center;
-background:#000;
-padding:18px;
-color:white;
-overflow:hidden;
+height:100vh;
+padding:20px;
 }
 
-/* AURORA */
-body::before{
-content:"";
-position:fixed;
-inset:-50%;
-background:
-radial-gradient(circle at 20% 20%, rgba(61,213,255,0.25), transparent 40%),
-radial-gradient(circle at 80% 30%, rgba(255,0,255,0.15), transparent 45%),
-radial-gradient(circle at 50% 80%, rgba(0,255,170,0.12), transparent 50%);
-animation:aurora 12s infinite linear;
-z-index:-1;
-filter:blur(40px);
-}
-
-@keyframes aurora{
-0%{transform:rotate(0deg) scale(1.1);}
-50%{transform:rotate(180deg) scale(1.3);}
-100%{transform:rotate(360deg) scale(1.1);}
-}
-
-/* CARD */
+/* Glass card */
 .card{
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(12px);
+border:1px solid rgba(0,170,255,0.3);
+border-radius:20px;
+padding:30px;
 width:100%;
 max-width:420px;
-padding:28px 22px;
-border-radius:26px;
-background:rgba(255,255,255,0.04);
-backdrop-filter:blur(14px);
-border:1px solid rgba(255,255,255,0.10);
-box-shadow:0 25px 70px rgba(0,0,0,0.85);
+text-align:center;
+color:white;
+box-shadow:0 0 25px rgba(0,170,255,0.4);
+animation:fadeIn 1.2s ease;
 }
 
-/* PROFILE (NO SPIN - ONLY COLOR GLOW) */
-.profile-wrap{
-width:110px;
-height:110px;
-margin:0 auto 10px;
-border-radius:50%;
-padding:3px;
-background:conic-gradient(from 0deg,#3dd5ff,#ff00ff,#ffd700,#3dd5ff);
-animation:glow 4s linear infinite;
-}
-
-@keyframes glow{
-0%{filter:hue-rotate(0deg);}
-100%{filter:hue-rotate(360deg);}
-}
-
-.profile-inner{
-width:100%;
-height:100%;
-border-radius:50%;
-background:#000;
-padding:3px;
-}
-
+/* Profile */
 .profile{
-width:100%;
-height:100%;
+width:120px;
+height:120px;
 border-radius:50%;
+border:3px solid #00aaff;
 object-fit:cover;
+box-shadow:0 0 20px #00aaff;
+margin-bottom:15px;
 }
 
-/* TEXT */
+/* Name */
 h1{
-font-size:22px;
-text-align:center;
-margin-top:10px;
-background:linear-gradient(90deg,#ffd700,#fff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+font-size:24px;
+margin-bottom:5px;
 }
 
-.tagline,.location,.status{
-text-align:center;
-font-size:12px;
-opacity:0.85;
-margin-top:4px;
+p{
+font-size:14px;
+opacity:0.8;
+margin-bottom:15px;
 }
 
-/* QR (UNCHANGED DESIGN) */
-.qr-box{
-width:140px;
-padding:8px;
-border-radius:18px;
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,0.12);
-}
-
-.qr-box img{
-width:100%;
-border-radius:14px;
-background:#fff;
-padding:6px;
-}
-
-/* CONTACT ROW */
-.contact-section{
-display:flex;
-gap:14px;
-align-items:center;
-margin-top:18px;
-}
-
-/* CONTACT BOX */
-.contact-info{
-flex:1;
-display:flex;
-flex-direction:column;
-gap:10px;
-}
-
-/* INFO BOX */
-.info{
-display:flex;
-gap:10px;
+/* Buttons */
+.btn{
+display:block;
+margin:10px 0;
 padding:12px;
-border-radius:12px;
-background:rgba(255,255,255,0.05);
-border-left:3px solid #3dd5ff;
-cursor:pointer;
-}
-
-/* ICONS */
-.phone-icon{color:#3dd5ff;}
-.email-icon{color:#ffd700;}
-
-.label{font-size:12px;opacity:0.7;}
-.value{font-size:13px;}
-
-/* LINKS */
-.value-link{
-color:inherit;
+border-radius:10px;
 text-decoration:none;
+color:white;
+font-weight:bold;
+transition:0.3s;
 }
 
-.phone-link{
-border-bottom:2px dotted #3dd5ff;
+.call{background:#00aaff;}
+.whatsapp{background:#25D366;}
+.email{background:#444;}
+
+.btn:hover{
+transform:scale(1.05);
 }
 
-.email-link{
-border-bottom:2px dotted #ffd700;
-}
-
-/* DIVIDER BETWEEN PHONE NUMBERS */
-.phone-divider{
-height:1px;
-background:rgba(255,255,255,0.2);
-margin:6px 0;
-}
-
-/* SOCIALS (UNCHANGED) */
+/* Social icons */
 .socials{
+margin-top:15px;
 display:flex;
 justify-content:center;
-gap:14px;
-margin-top:18px;
+gap:15px;
 }
 
 .socials a{
-width:38px;
-height:38px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:10px;
-background:rgba(255,255,255,0.05);
-}
-
-/* ICON COLORS */
-.fa-facebook-f{color:#1877F2;}
-.fa-whatsapp{color:#25D366;}
-.fa-instagram{
-background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-.fa-tiktok{color:#fff;text-shadow:1px 0 red,-1px 0 cyan;}
-.fa-x-twitter{color:#fff;}
-
-/* BUTTONS */
-.btn-row{
-display:flex;
-gap:10px;
-margin-top:15px;
-}
-
-button{
-flex:1;
-padding:12px;
-border:none;
-border-radius:12px;
-cursor:pointer;
-}
-
-.save-btn{background:rgba(61,213,255,0.15);color:#fff;}
-.share-btn{background:rgba(255,215,0,0.15);color:#ffd700;}
-
-/* TOAST */
-#toast{
-position:fixed;
-bottom:20px;
-left:50%;
-transform:translateX(-50%);
-background:#111;
-padding:10px 16px;
-border-radius:8px;
-opacity:0;
+color:#00aaff;
+font-size:20px;
 transition:0.3s;
-border:1px solid rgba(255,255,255,0.2);
 }
 
-#toast.show{opacity:1;}
+.socials a:hover{
+transform:scale(1.2);
+color:white;
+}
 
+/* Hidden socials (Facebook & LinkedIn) */
+.hidden{
+display:none;
+}
+
+/* Animation */
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(30px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* Responsive */
+@media(max-width:500px){
+.card{padding:20px;}
+.profile{width:100px;height:100px;}
+}
 </style>
 </head>
 
 <body>
 
+<div class="background"></div>
+
+<div class="container">
 <div class="card">
 
-<!-- PROFILE -->
-<div class="profile-wrap">
-<div class="profile-inner">
-<img src="profile.png" class="profile">
-</div>
-</div>
+<!-- Profile -->
+<img src="profile.png" class="profile" alt="ACHEX TECH HUB">
 
 <h1>ACHEX TECH HUB</h1>
-<div class="tagline">Digital Identity • Tech Solutions</div>
-<div class="location">📍 Embu, Kenya</div>
-<div class="status">🟢 Open for Business</div>
+<p>Make a Step</p>
+<p>📍 Embu | Tech Solutions & Laptops</p>
 
-<!-- QR + CONTACT -->
-<div class="contact-section">
-
-<div class="qr-box">
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://achexhub.github.io/achex-tech-hub/">
-</div>
-
-<div class="contact-info">
-
-<!-- PHONE BOX (BOTH NUMBERS TOGETHER) -->
-<div class="info" onclick="copyText('+254706056515 | +254704817217')">
-<i class="fa-solid fa-mobile-screen-button phone-icon"></i>
-
-<div>
-<div class="label">Phone</div>
-
-<a class="value-link phone-link" href="tel:+254706056515" onclick="event.stopPropagation()">
-+254706056515
+<!-- Buttons -->
+<a class="btn call" href="tel:+254706056515">
+📞 Call Now
 </a>
 
-<div class="phone-divider"></div>
-
-<a class="value-link phone-link" href="tel:+254704817217" onclick="event.stopPropagation()">
-+254704817217
+<a class="btn whatsapp" href="https://wa.me/254706056515" target="_blank">
+💬 WhatsApp Us
 </a>
 
-</div>
-</div>
-
-<!-- EMAIL -->
-<div class="info" onclick="copyText('achexhub@gmail.com')">
-<i class="fa-solid fa-envelope email-icon"></i>
-
-<div>
-<div class="label">Email</div>
-<a class="value-link email-link" href="mailto:achexhub@gmail.com" onclick="event.stopPropagation()">
-achexhub@gmail.com
+<a class="btn email" href="mailto:achexhub@gmail.com">
+✉️ Email Us
 </a>
-</div>
 
-</div>
-
-</div>
-</div>
-
-<!-- SOCIALS -->
+<!-- Socials -->
 <div class="socials">
-<a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
-<a href="https://wa.me/254704817217"><i class="fab fa-whatsapp"></i></a>
-<a href="https://instagram.com/achex_tech_ke"><i class="fab fa-instagram"></i></a>
-<a href="https://tiktok.com"><i class="fab fa-tiktok"></i></a>
-<a href="https://x.com"><i class="fab fa-x-twitter"></i></a>
+
+<a href="https://www.instagram.com/achex_tech_ke?igsh=MXdweWF1dTYzcnY4eA==" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://vm.tiktok.com/ZS9jQc9FystjS-6hX4l/" target="_blank">
+<i class="fab fa-tiktok"></i>
+</a>
+
+<a href="https://x.com/achextech" target="_blank">
+<i class="fab fa-x-twitter"></i>
+</a>
+
+<!-- Hidden for now -->
+<a class="hidden" href="#">
+<i class="fab fa-facebook"></i>
+</a>
+
+<a class="hidden" href="#">
+<i class="fab fa-linkedin"></i>
+</a>
+
 </div>
 
-<!-- BUTTONS -->
-<div class="btn-row">
-<button class="save-btn" onclick="downloadVCF()">Save Contact</button>
-<button class="share-btn" onclick="shareCard()">Share</button>
 </div>
-
 </div>
-
-<div id="toast">Copied</div>
-
-<script>
-
-function showToast(msg){
-const t=document.getElementById("toast");
-t.innerText=msg;
-t.classList.add("show");
-setTimeout(()=>t.classList.remove("show"),2000);
-}
-
-async function copyText(text){
-await navigator.clipboard.writeText(text);
-showToast("Copied");
-}
-
-function downloadVCF(){
-const vcf=`BEGIN:VCARD
-VERSION:3.0
-FN:Achex Tech Hub
-TEL:+254706056515
-TEL:+254704817217
-EMAIL:achexhub@gmail.com
-END:VCARD`;
-
-const blob=new Blob([vcf],{type:"text/vcard"});
-const a=document.createElement("a");
-a.href=URL.createObjectURL(blob);
-a.download="achex.vcf";
-a.click();
-
-showToast("Saved");
-}
-
-async function shareCard(){
-try{
-await navigator.share({
-title:"Achex Tech Hub",
-text:"My Digital Card",
-url:location.href
-});
-}catch(e){}
-}
-
-</script>
 
 </body>
 </html>
