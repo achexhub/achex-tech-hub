@@ -487,6 +487,32 @@ z-index:999;
 #toast.show{
 opacity:1;
 }
+   .info-group{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+border-radius:18px;
+overflow:hidden;
+}
+
+.info-row{
+display:flex;
+align-items:center;
+gap:14px;
+padding:15px;
+text-decoration:none;
+color:#fff;
+transition:.3s;
+}
+
+.info-row:hover{
+background:rgba(255,255,255,.06);
+}
+
+.divider{
+height:1px;
+background:rgba(255,255,255,.08);
+margin:0 15px;
+}
 
 </style>
 </head>
@@ -546,33 +572,39 @@ opacity:1;
 
         <div class="contact-info">
 
-            <a class="info" href="tel:+254706056515">
+    <div class="info-group">
 
-                <i class="fa-solid fa-mobile-screen-button phone-icon"></i>
+        <a class="info-row" href="tel:+254706056515">
+            <i class="fa-solid fa-mobile-screen-button phone-icon"></i>
+            <div>
+                <div class="label">Phone</div>
+                <div class="value">+254 706 056 515</div>
+            </div>
+        </a>
 
-                <div>
-                    <div class="label">Phone</div>
-                    <div class="value">+254 706 056 515</div>
-                </div>
+        <div class="divider"></div>
 
-            </a>
+        <a class="info-row" href="tel:+254704817217">
+            <i class="fa-solid fa-mobile-screen-button phone-icon"></i>
+            <div>
+                <div class="label">Phone</div>
+                <div class="value">+254 704 817 217</div>
+            </div>
+        </a>
 
-            <a class="info" href="tel:+254704817217">
+        <div class="divider"></div>
 
-                <i class="fa-solid fa-mobile-screen-button phone-icon"></i>
+        <a class="info-row" href="mailto:achexhub@gmail.com">
+            <i class="fa-solid fa-envelope email-icon"></i>
+            <div>
+                <div class="label">Email</div>
+                <div class="value">achexhub@gmail.com</div>
+            </div>
+        </a>
 
-                <div>
-                    <div class="label">Phone</div>
-                    <div class="value">+254 704 817 217</div>
-                </div>
+    </div>
 
-            </a>
-
-            <a class="info email-card" href="mailto:achexhub@gmail.com">
-
-                <i class="fa-solid fa-envelope email-icon"></i>
-
-                <div>
+</div>
                     <div class="label">Email</div>
                     <div class="value">achexhub@gmail.com</div>
                 </div>
