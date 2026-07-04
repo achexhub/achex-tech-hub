@@ -3,19 +3,26 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
 
 <title>ACHEX TECH HUB</title>
 
 <meta name="theme-color" content="#050505">
 
-<meta name="description" content="Achex Tech Hub | Built For Performance • Chosen For You">
+<meta name="description"
+content="Achex Tech Hub | Built For Performance • Chosen For You">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -23,19 +30,26 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 <style>
 
 *{
+
 margin:0;
+
 padding:0;
+
 box-sizing:border-box;
+
 font-family:'Poppins',sans-serif;
+
 }
 
 html{
+
 scroll-behavior:smooth;
+
 }
 
 body{
 
-background:#040404;
+background:#030303;
 
 color:#fff;
 
@@ -47,16 +61,15 @@ justify-content:center;
 
 align-items:center;
 
-padding:18px;
+padding:20px;
 
 overflow-x:hidden;
 
 position:relative;
 
 }
-
-/* ===========================
-TECH BACKGROUND
+   /* ===========================
+FUTURISTIC TECH BACKGROUND
 =========================== */
 
 body::before{
@@ -69,28 +82,28 @@ inset:0;
 
 background:
 
-radial-gradient(circle at 20% 20%,rgba(61,213,255,.10),transparent 35%),
+radial-gradient(circle at 18% 20%,rgba(61,213,255,.10),transparent 28%),
 
-radial-gradient(circle at 80% 15%,rgba(255,215,0,.08),transparent 30%),
+radial-gradient(circle at 82% 22%,rgba(255,215,0,.08),transparent 30%),
 
-radial-gradient(circle at 50% 85%,rgba(61,213,255,.08),transparent 35%);
+radial-gradient(circle at 50% 85%,rgba(61,213,255,.06),transparent 35%);
 
-filter:blur(80px);
+filter:blur(90px);
 
-animation:backgroundMove 18s linear infinite;
+animation:aurora 18s linear infinite;
 
-z-index:-3;
+z-index:-5;
 
 }
 
-@keyframes backgroundMove{
+@keyframes aurora{
 
 0%{
 transform:rotate(0deg) scale(1);
 }
 
 50%{
-transform:rotate(180deg) scale(1.12);
+transform:rotate(180deg) scale(1.15);
 }
 
 100%{
@@ -99,7 +112,7 @@ transform:rotate(360deg) scale(1);
 
 }
 
-/* Circuit Grid */
+/* Circuit Board Grid */
 
 body::after{
 
@@ -111,15 +124,79 @@ inset:0;
 
 background-image:
 
-linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+linear-gradient(rgba(61,213,255,.05) 1px,transparent 1px),
 
-linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+linear-gradient(90deg,rgba(61,213,255,.05) 1px,transparent 1px);
 
-background-size:40px 40px;
+background-size:42px 42px;
+
+opacity:.35;
 
 pointer-events:none;
 
-z-index:-2;
+z-index:-4;
+
+}
+
+/* Floating Tech Particles */
+
+.particle{
+
+position:fixed;
+
+width:4px;
+
+height:4px;
+
+border-radius:50%;
+
+background:#3dd5ff;
+
+box-shadow:0 0 12px #3dd5ff;
+
+animation:floatParticle linear infinite;
+
+pointer-events:none;
+
+z-index:-3;
+
+}
+
+.particle.gold{
+
+background:#ffd700;
+
+box-shadow:0 0 12px #ffd700;
+
+}
+
+@keyframes floatParticle{
+
+0%{
+
+transform:translateY(110vh);
+
+opacity:0;
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+90%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-20vh);
+
+opacity:0;
 
 }
 
@@ -131,53 +208,123 @@ MAIN CARD
 
 width:100%;
 
-max-width:430px;
-
-background:rgba(255,255,255,.06);
-
-backdrop-filter:blur(22px);
-
-border:1px solid rgba(255,255,255,.08);
-
-border-radius:30px;
+max-width:440px;
 
 padding:30px 24px;
 
-box-shadow:0 25px 60px rgba(0,0,0,.65);
+border-radius:32px;
+
+background:rgba(255,255,255,.06);
+
+backdrop-filter:blur(24px);
+
+border:1px solid rgba(255,255,255,.10);
+
+box-shadow:
+
+0 25px 70px rgba(0,0,0,.75),
+
+0 0 30px rgba(61,213,255,.08);
 
 position:relative;
 
 overflow:hidden;
 
-animation:fadeUp .8s ease;
+animation:cardIn .8s ease;
 
 }
 
-@keyframes fadeUp{
+/* Glass Reflection */
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+top:-150%;
+
+left:-60%;
+
+width:70%;
+
+height:300%;
+
+background:linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.08),
+
+transparent
+
+);
+
+transform:rotate(25deg);
+
+animation:shine 8s infinite;
+
+pointer-events:none;
+
+}
+
+@keyframes shine{
+
+0%{
+
+left:-80%;
+
+}
+
+100%{
+
+left:180%;
+
+}
+
+}
+
+@keyframes cardIn{
 
 from{
+
 opacity:0;
+
 transform:translateY(35px);
+
 }
 
 to{
+
 opacity:1;
+
 transform:translateY(0);
+
 }
 
 }
+   }
+   /* ===========================
+TOP SECTION
+=========================== */
 
 .top{
 
 text-align:center;
 
+position:relative;
+
+z-index:2;
+
 }
 
 .logo-ring{
 
-width:135px;
+width:140px;
 
-height:135px;
+height:140px;
 
 margin:auto;
 
@@ -189,9 +336,9 @@ background:linear-gradient(135deg,#3dd5ff,#ffd700);
 
 box-shadow:
 
-0 0 20px rgba(61,213,255,.25),
+0 0 25px rgba(61,213,255,.35),
 
-0 0 20px rgba(255,215,0,.12);
+0 0 25px rgba(255,215,0,.18);
 
 }
 
@@ -201,11 +348,11 @@ width:100%;
 
 height:100%;
 
-padding:4px;
-
-background:#080808;
+padding:5px;
 
 border-radius:50%;
+
+background:#080808;
 
 }
 
@@ -222,15 +369,12 @@ object-fit:cover;
 display:block;
 
 }
-/* ===========================
-HEADER
-=========================== */
 
 h1{
 
-margin-top:20px;
+margin-top:22px;
 
-font-size:29px;
+font-size:30px;
 
 font-weight:800;
 
@@ -252,7 +396,7 @@ font-size:14px;
 
 font-weight:500;
 
-color:#c8c8c8;
+color:#cfcfcf;
 
 letter-spacing:.4px;
 
@@ -272,7 +416,7 @@ gap:8px;
 
 font-size:13px;
 
-color:#d8d8d8;
+color:#d7d7d7;
 
 }
 
@@ -284,7 +428,7 @@ color:#ff5b5b;
 
 .status{
 
-margin-top:15px;
+margin-top:16px;
 
 display:inline-flex;
 
@@ -292,7 +436,7 @@ align-items:center;
 
 gap:10px;
 
-padding:10px 18px;
+padding:11px 18px;
 
 border-radius:999px;
 
@@ -314,9 +458,9 @@ height:8px;
 
 border-radius:50%;
 
-background:#19ff66;
+background:#22ff66;
 
-box-shadow:0 0 12px #19ff66;
+box-shadow:0 0 12px #22ff66;
 
 animation:pulse 1.5s infinite;
 
@@ -325,23 +469,30 @@ animation:pulse 1.5s infinite;
 @keyframes pulse{
 
 0%{
+
 transform:scale(1);
+
 opacity:1;
+
 }
 
 50%{
+
 transform:scale(1.6);
+
 opacity:.5;
+
 }
 
 100%{
+
 transform:scale(1);
+
 opacity:1;
-}
 
 }
 
-/* Premium Divider */
+}
 
 .premium-divider{
 
@@ -349,22 +500,27 @@ width:100%;
 
 height:2px;
 
-margin:24px 0 6px;
+margin:26px 0;
 
 border-radius:999px;
 
 background:linear-gradient(
+
 90deg,
-transparent 0%,
-rgba(61,213,255,.55) 25%,
-rgba(255,215,0,.55) 50%,
-rgba(61,213,255,.55) 75%,
-transparent 100%
+
+transparent,
+
+rgba(61,213,255,.5),
+
+rgba(255,215,0,.5),
+
+transparent
+
 );
 
 box-shadow:
-0 0 10px rgba(61,213,255,.18),
-0 0 10px rgba(255,215,0,.12);
+
+0 0 10px rgba(61,213,255,.2);
 
 }
    /* ===========================
@@ -375,17 +531,23 @@ CONTACT SECTION
 
 display:flex;
 
-gap:18px;
-
 align-items:flex-start;
 
-margin-top:26px;
+justify-content:space-between;
+
+gap:16px;
+
+margin-top:28px;
 
 }
 
+/* QR */
+
 .qr-box{
 
-width:145px;
+width:135px;
+
+flex-shrink:0;
 
 display:flex;
 
@@ -403,24 +565,37 @@ padding:10px;
 
 background:#fff;
 
-border-radius:18px;
+border-radius:20px;
 
 box-shadow:
-0 0 18px rgba(61,213,255,.18);
+
+0 0 18px rgba(61,213,255,.25),
+
+0 0 30px rgba(61,213,255,.08);
+
+transition:.35s;
+
+}
+
+.qr-frame:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+
+0 0 28px rgba(61,213,255,.45);
 
 }
 
 .qr-frame img{
 
-width:125px;
+width:115px;
 
-height:125px;
+height:115px;
 
 display:block;
 
 border-radius:10px;
-
-background:#fff;
 
 }
 
@@ -486,7 +661,7 @@ border-top:none;
 
 .scan-text{
 
-margin-top:10px;
+margin-top:12px;
 
 font-size:10px;
 
@@ -494,9 +669,11 @@ letter-spacing:3px;
 
 font-weight:700;
 
-color:#d5d5d5;
+color:#d8d8d8;
 
 }
+
+/* CONTACTS */
 
 .contact-info{
 
@@ -524,6 +701,8 @@ border-radius:18px;
 
 overflow:hidden;
 
+backdrop-filter:blur(10px);
+
 }
 
 .phone-row{
@@ -534,7 +713,7 @@ align-items:center;
 
 gap:14px;
 
-padding:14px;
+padding:15px;
 
 text-decoration:none;
 
@@ -546,7 +725,7 @@ transition:.3s;
 
 .phone-row:hover{
 
-background:rgba(255,255,255,.05);
+background:rgba(61,213,255,.08);
 
 }
 
@@ -556,7 +735,7 @@ height:1px;
 
 background:rgba(255,255,255,.08);
 
-margin:0 14px;
+margin:0 15px;
 
 }
 
@@ -570,15 +749,15 @@ align-items:center;
 
 gap:14px;
 
-padding:14px;
+padding:15px;
+
+border-radius:18px;
 
 background:rgba(255,215,0,.06);
 
 border:1px solid rgba(255,215,0,.18);
 
 border-left:3px solid #ffd700;
-
-border-radius:18px;
 
 text-decoration:none;
 
@@ -593,6 +772,8 @@ transition:.3s;
 background:rgba(255,215,0,.10);
 
 }
+
+/* ICONS */
 
 .phone-icon{
 
@@ -624,7 +805,7 @@ font-size:12px;
 
 font-weight:600;
 
-opacity:.7;
+opacity:.65;
 
 }
 
@@ -637,36 +818,53 @@ font-weight:500;
 }
 
 /* ===========================
-MOBILE RESPONSIVE
+PHONE RESPONSIVE
+(KEEP SIDE BY SIDE)
 =========================== */
 
-@media(max-width:520px){
+@media(max-width:600px){
 
 .contact-section{
 
-flex-direction:column;
+display:flex;
 
-align-items:center;
+flex-direction:row;
+
+align-items:flex-start;
+
+gap:12px;
 
 }
 
 .qr-box{
 
-width:100%;
-
-}
-
-.contact-info{
-
-width:100%;
+width:120px;
 
 }
 
 .qr-frame img{
 
-width:150px;
+width:100px;
 
-height:150px;
+height:100px;
+
+}
+
+.contact-info{
+
+flex:1;
+
+}
+
+.value{
+
+font-size:12px;
+
+}
+
+.label{
+
+font-size:11px;
 
 }
 
@@ -698,10 +896,12 @@ border-radius:999px;
 background:linear-gradient(
 90deg,
 transparent,
-rgba(61,213,255,.45),
-rgba(255,215,0,.45),
+rgba(61,213,255,.50),
+rgba(255,215,0,.50),
 transparent
 );
+
+box-shadow:0 0 10px rgba(61,213,255,.18);
 
 }
 
@@ -713,14 +913,14 @@ font-weight:700;
 
 letter-spacing:3px;
 
-color:#cfcfcf;
+color:#d6d6d6;
 
 white-space:nowrap;
 
 }
 
 /* ===========================
-SOCIALS
+SOCIAL ICONS
 =========================== */
 
 .socials{
@@ -737,11 +937,9 @@ margin-bottom:28px;
 
 .socials a{
 
-width:50px;
+width:52px;
 
-height:50px;
-
-border-radius:16px;
+height:52px;
 
 display:flex;
 
@@ -749,25 +947,60 @@ justify-content:center;
 
 align-items:center;
 
+text-decoration:none;
+
+border-radius:18px;
+
 background:rgba(255,255,255,.05);
 
 border:1px solid rgba(255,255,255,.08);
 
-text-decoration:none;
+backdrop-filter:blur(12px);
 
-transition:.35s;
+font-size:22px;
 
-font-size:21px;
+transition:.35s ease;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.socials a::before{
+
+content:"";
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(
+135deg,
+transparent,
+rgba(255,255,255,.12),
+transparent
+);
+
+transform:translateX(-120%);
+
+transition:.5s;
+
+}
+
+.socials a:hover::before{
+
+transform:translateX(120%);
 
 }
 
 .socials a:hover{
 
-transform:translateY(-5px);
+transform:translateY(-6px) scale(1.08);
 
-background:rgba(255,255,255,.08);
-
-box-shadow:0 0 20px rgba(61,213,255,.18);
+box-shadow:0 0 20px rgba(61,213,255,.25);
 
 }
 
@@ -775,17 +1008,30 @@ box-shadow:0 0 20px rgba(61,213,255,.18);
 .fa-whatsapp{color:#25D366;}
 
 .fa-instagram{
-background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#bc1888);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
 
-.fa-tiktok{
-color:#ffffff;
+background:linear-gradient(
+45deg,
+#f09433,
+#e6683c,
+#dc2743,
+#bc1888);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
 }
 
 .fa-x-twitter{
+
 color:#ffffff;
+
+}
+
+.fa-tiktok{
+
+color:#ffffff;
+
 }
 
 /* ===========================
@@ -798,7 +1044,7 @@ display:flex;
 
 gap:12px;
 
-margin-bottom:24px;
+margin-bottom:26px;
 
 }
 
@@ -807,8 +1053,6 @@ margin-bottom:24px;
 flex:1;
 
 padding:15px;
-
-border:none;
 
 border-radius:16px;
 
@@ -822,35 +1066,51 @@ transition:.35s;
 
 }
 
+/* Soft Blue (V2 Style) */
+
 .save-btn{
 
-background:linear-gradient(135deg,#3dd5ff,#2aa8d6);
+background:rgba(61,213,255,.10);
 
-color:#fff;
+border:1px solid rgba(61,213,255,.30);
+
+color:#3dd5ff;
+
+backdrop-filter:blur(12px);
 
 }
 
 .save-btn:hover{
 
+background:rgba(61,213,255,.16);
+
 transform:translateY(-3px);
 
-box-shadow:0 0 22px rgba(61,213,255,.35);
+box-shadow:0 0 18px rgba(61,213,255,.25);
 
 }
 
+/* Soft Gold (V2 Style) */
+
 .share-btn{
 
-background:linear-gradient(135deg,#ffd700,#d6b100);
+background:rgba(255,215,0,.10);
 
-color:#111;
+border:1px solid rgba(255,215,0,.30);
+
+color:#ffd700;
+
+backdrop-filter:blur(12px);
 
 }
 
 .share-btn:hover{
 
+background:rgba(255,215,0,.16);
+
 transform:translateY(-3px);
 
-box-shadow:0 0 22px rgba(255,215,0,.30);
+box-shadow:0 0 18px rgba(255,215,0,.20);
 
 }
 
@@ -860,17 +1120,17 @@ FOOTER
 
 .footer{
 
+padding-top:18px;
+
+border-top:1px solid rgba(255,255,255,.06);
+
 text-align:center;
 
 font-size:12px;
 
-color:#8e8e8e;
+color:#9f9f9f;
 
 line-height:1.8;
-
-padding-top:10px;
-
-border-top:1px solid rgba(255,255,255,.06);
 
 }
 
@@ -888,13 +1148,13 @@ bottom:25px;
 
 transform:translateX(-50%);
 
-background:#111;
-
-padding:12px 22px;
+padding:12px 24px;
 
 border-radius:12px;
 
-border:1px solid rgba(255,255,255,.1);
+background:#101010;
+
+border:1px solid rgba(255,255,255,.08);
 
 opacity:0;
 
@@ -911,7 +1171,7 @@ opacity:1;
 }
 
 /* ===========================
-END OF CSS
+END CSS
 =========================== */
 
 </style>
@@ -936,24 +1196,36 @@ END OF CSS
 <h1>ACHEX TECH HUB</h1>
 
 <p class="tagline">
+
 Built For Performance • Chosen For You
+
 </p>
 
 <div class="location">
+
 <i class="fa-solid fa-location-dot"></i>
+
 <span>Embu, Kenya</span>
+
 </div>
 
 <div class="status">
+
 <span class="dot"></span>
+
 Open for Business
+
 </div>
 
 <div class="premium-divider"></div>
 
 </div>
 
+<!-- CONTACT SECTION -->
+
 <div class="contact-section">
+
+<!-- QR -->
 
 <div class="qr-box">
 
@@ -964,15 +1236,19 @@ Open for Business
 <span class="corner bl"></span>
 <span class="corner br"></span>
 
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://achexhub.github.io/achex-tech-hub/" alt="QR Code">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=https://achexhub.github.io/achex-tech-hub/" alt="QR Code">
 
 </div>
 
 <div class="scan-text">
+
 SCAN TO VISIT
+
 </div>
 
 </div>
+
+<!-- CONTACTS -->
 
 <div class="contact-info">
 
@@ -986,10 +1262,16 @@ SCAN TO VISIT
 
 <div>
 
-<div class="label">Phone</div>
+<div class="label">
+
+Phone
+
+</div>
 
 <div class="value">
+
 +254 706 056 515
+
 </div>
 
 </div>
@@ -1004,10 +1286,16 @@ SCAN TO VISIT
 
 <div>
 
-<div class="label">Phone</div>
+<div class="label">
+
+Phone
+
+</div>
 
 <div class="value">
+
 +254 704 817 217
+
 </div>
 
 </div>
@@ -1018,16 +1306,24 @@ SCAN TO VISIT
 
 <!-- EMAIL -->
 
-<a class="email-box" href="mailto:achexhub@gmail.com">
+<a class="email-box"
+
+href="mailto:achexhub@gmail.com">
 
 <i class="fa-solid fa-envelope email-icon"></i>
 
 <div>
 
-<div class="label">Email</div>
+<div class="label">
+
+Email
+
+</div>
 
 <div class="value">
+
 achexhub@gmail.com
+
 </div>
 
 </div>
@@ -1037,58 +1333,86 @@ achexhub@gmail.com
 </div>
 
 </div>
+
+<!-- FOLLOW -->
 
 <div class="follow">
 
 <div class="line"></div>
 
 <div class="text">
+
 FOLLOW US
+
 </div>
 
 <div class="line"></div>
 
 </div>
 
+<!-- SOCIALS -->
+
 <div class="socials">
 
 <a href="#" title="Facebook">
+
 <i class="fab fa-facebook-f"></i>
+
 </a>
 
-<a href="https://wa.me/254704817217">
+<a href="https://wa.me/254704817217" title="WhatsApp">
+
 <i class="fab fa-whatsapp"></i>
+
 </a>
 
-<a href="https://instagram.com/achex_tech_ke">
+<a href="https://instagram.com/achex_tech_ke" title="Instagram">
+
 <i class="fab fa-instagram"></i>
+
 </a>
 
-<a href="https://x.com/achextech">
+<a href="https://x.com/achextech" title="X">
+
 <i class="fab fa-x-twitter"></i>
+
 </a>
 
-<a href="https://vm.tiktok.com/ZS9jQc9FystjS-6hX4l/">
+<a href="https://vm.tiktok.com/ZS9jQc9FystjS-6hX4l/" title="TikTok">
+
 <i class="fab fa-tiktok"></i>
+
 </a>
 
 </div>
 
+<!-- BUTTONS -->
+
 <div class="btn-row">
 
-<button class="btn save-btn" onclick="downloadVCF()">
+<button class="btn save-btn"
+
+onclick="downloadVCF()">
+
 📇 Save Contact
+
 </button>
 
-<button class="btn share-btn" onclick="shareCard()">
+<button class="btn share-btn"
+
+onclick="shareCard()">
+
 🔗 Share Card
+
 </button>
 
 </div>
 
 <div class="footer">
 
-Powered by <strong>Achex Tech Hub</strong><br>
+Powered by <strong>Achex Tech Hub</strong>
+
+<br>
 
 Built For Performance • Chosen For You
 
@@ -1099,36 +1423,74 @@ Built For Performance • Chosen For You
 <div id="toast"></div>
 <script>
 
+/* ===========================
+CREATE FLOATING PARTICLES
+=========================== */
+
+const particleColors=["","gold"];
+
+for(let i=0;i<35;i++){
+
+const p=document.createElement("div");
+
+p.className="particle";
+
+if(Math.random()>.5){
+
+p.classList.add("gold");
+
+}
+
+p.style.left=Math.random()*100+"vw";
+
+p.style.animationDuration=(10+Math.random()*12)+"s";
+
+p.style.animationDelay=(Math.random()*12)+"s";
+
+p.style.opacity=Math.random();
+
+document.body.appendChild(p);
+
+}
+
+/* ===========================
+TOAST
+=========================== */
+
 function showToast(message){
 
 const toast=document.getElementById("toast");
 
-toast.textContent=message;
+toast.innerHTML=message;
 
 toast.classList.add("show");
 
 setTimeout(()=>{
+
 toast.classList.remove("show");
-},2000);
+
+},2200);
 
 }
 
-/* Save Contact */
+/* ===========================
+SAVE CONTACT
+=========================== */
 
 function downloadVCF(){
 
-const vcf=`BEGIN:VCARD
+const card=`BEGIN:VCARD
 VERSION:3.0
 FN:Achex Tech Hub
 ORG:Achex Tech Hub
-TEL;TYPE=CELL:+254706056515
-TEL;TYPE=CELL:+254704817217
+TEL:+254706056515
+TEL:+254704817217
 EMAIL:achexhub@gmail.com
-ADR:;;Embu;;;Kenya
+ADR:Embu, Kenya
 URL:https://achexhub.github.io/achex-tech-hub/
 END:VCARD`;
 
-const blob=new Blob([vcf],{type:"text/vcard"});
+const blob=new Blob([card],{type:"text/vcard"});
 
 const link=document.createElement("a");
 
@@ -1138,15 +1500,17 @@ link.download="Achex-Tech-Hub.vcf";
 
 link.click();
 
-showToast("Contact saved successfully");
+showToast("✔ Contact Saved");
 
 }
 
-/* Share */
+/* ===========================
+SHARE CARD
+=========================== */
 
 async function shareCard(){
 
-const data={
+const shareData={
 
 title:"Achex Tech Hub",
 
@@ -1160,15 +1524,15 @@ if(navigator.share){
 
 try{
 
-await navigator.share(data);
+await navigator.share(shareData);
 
 }catch(e){}
 
 }else{
 
-navigator.clipboard.writeText(data.url);
+navigator.clipboard.writeText(shareData.url);
 
-showToast("Website link copied");
+showToast("✔ Link Copied");
 
 }
 
