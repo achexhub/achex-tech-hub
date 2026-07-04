@@ -344,6 +344,149 @@ transparent
 border-radius:50px;
 
 }
+   /*==========================
+CONTACT SECTION
+==========================*/
+
+.contact-section{
+display:flex;
+align-items:center;
+gap:18px;
+margin-top:28px;
+}
+
+.qr-box{
+width:150px;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.qr-frame{
+position:relative;
+padding:10px;
+background:#fff;
+border-radius:20px;
+animation:qrGlow 2.8s ease-in-out infinite;
+}
+
+.qr-frame img{
+width:130px;
+height:130px;
+display:block;
+border-radius:10px;
+background:#fff;
+}
+
+@keyframes qrGlow{
+0%,100%{
+box-shadow:0 0 10px rgba(61,213,255,.35);
+}
+50%{
+box-shadow:
+0 0 25px rgba(61,213,255,.8),
+0 0 45px rgba(61,213,255,.35);
+}
+}
+
+.corner{
+position:absolute;
+width:16px;
+height:16px;
+border:3px solid #3dd5ff;
+}
+
+.tl{
+top:-4px;
+left:-4px;
+border-right:none;
+border-bottom:none;
+}
+
+.tr{
+top:-4px;
+right:-4px;
+border-left:none;
+border-bottom:none;
+}
+
+.bl{
+bottom:-4px;
+left:-4px;
+border-right:none;
+border-top:none;
+}
+
+.br{
+bottom:-4px;
+right:-4px;
+border-left:none;
+border-top:none;
+}
+
+.scan-text{
+margin-top:10px;
+font-size:10px;
+letter-spacing:3px;
+font-weight:700;
+color:#d9d9d9;
+text-align:center;
+}
+
+.contact-info{
+flex:1;
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.info{
+display:flex;
+align-items:center;
+gap:14px;
+padding:14px;
+border-radius:16px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+border-left:3px solid #3dd5ff;
+text-decoration:none;
+color:#fff;
+transition:.3s;
+}
+
+.info:hover{
+transform:translateY(-3px);
+background:rgba(255,255,255,.08);
+}
+
+.email-card{
+border-left:3px solid #ffd700;
+}
+
+.info i{
+font-size:20px;
+width:24px;
+text-align:center;
+}
+
+.phone-icon{
+color:#3dd5ff;
+}
+
+.email-icon{
+color:#ffd700;
+}
+
+.label{
+font-size:12px;
+opacity:.65;
+font-weight:600;
+}
+
+.value{
+font-size:14px;
+font-weight:500;
+}
 </style>
 
 </head>
@@ -378,5 +521,114 @@ border-radius:50px;
         </div>
 
         <div class="premium-divider"></div>
+       <div class="contact-section">
+
+    <div class="qr-box">
+
+        <div class="qr-frame">
+
+            <span class="corner tl"></span>
+            <span class="corner tr"></span>
+            <span class="corner bl"></span>
+            <span class="corner br"></span>
+
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://achexhub.github.io/achex-tech-hub/" alt="QR Code">
+
+        </div>
+
+        <div class="scan-text">
+            SCAN TO VISIT
+        </div>
+
+    </div>
+
+    <div class="contact-info">
+
+        <a class="info" href="tel:+254706056515">
+            <i class="fa-solid fa-mobile-screen-button phone-icon"></i>
+
+            <div>
+                <div class="label">Phone</div>
+                <div class="value">+254 706 056 515</div>
+            </div>
+
+        </a>
+
+        <a class="info" href="tel:+254704817217">
+            <i class="fa-solid fa-mobile-screen-button phone-icon"></i>
+
+            <div>
+                <div class="label">Phone</div>
+                <div class="value">+254 704 817 217</div>
+            </div>
+
+        </a>
+
+        <a class="info email-card" href="mailto:achexhub@gmail.com">
+            <i class="fa-solid fa-envelope email-icon"></i>
+
+            <div>
+                <div class="label">Email</div>
+                <div class="value">achexhub@gmail.com</div>
+            </div>
+
+        </a>
+
+    </div>
+
+</div>
+       <div class="follow">
+
+    <div class="line"></div>
+
+    <div class="text">FOLLOW US</div>
+
+    <div class="line"></div>
+
+</div>
+
+<div class="socials">
+
+    <a href="#" target="_blank" title="Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+    <a href="https://wa.me/254704817217" target="_blank" title="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a href="https://instagram.com/achex_tech_ke" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+
+    <a href="https://vm.tiktok.com/ZS9jQc9FystjS-6hX4l/" target="_blank" title="TikTok">
+        <i class="fab fa-tiktok"></i>
+    </a>
+
+    <a href="https://x.com/achextech" target="_blank" title="X">
+        <i class="fab fa-x-twitter"></i>
+    </a>
+
+</div>
+
+<div class="btn-row">
+
+    <button class="save-btn" onclick="downloadVCF()">
+        📇 Save Contact
+    </button>
+
+    <button class="share-btn" onclick="shareCard()">
+        🔗 Share Card
+    </button>
+
+</div>
+
+<div class="footer">
+    © 2026 Achex Tech Hub
+</div>
+
+</div>
+
+<div id="toast"></div>
 
     </div>
