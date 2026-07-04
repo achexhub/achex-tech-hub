@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
@@ -9,7 +8,12 @@
 <title>ACHEX TECH HUB</title>
 
 <meta name="theme-color" content="#050505">
+
 <meta name="description" content="Achex Tech Hub | Built For Performance • Chosen For You">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -30,371 +34,741 @@ scroll-behavior:smooth;
 }
 
 body{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:20px;
-background:#050505;
-overflow-x:hidden;
-position:relative;
+
+background:#040404;
+
 color:#fff;
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:18px;
+
+overflow-x:hidden;
+
+position:relative;
+
 }
 
-/* Aurora */
+/* ===========================
+TECH BACKGROUND
+=========================== */
 
 body::before{
+
 content:"";
+
 position:fixed;
-inset:-40%;
+
+inset:0;
+
 background:
-radial-gradient(circle at 15% 20%,rgba(61,213,255,.14),transparent 35%),
-radial-gradient(circle at 85% 25%,rgba(255,215,0,.08),transparent 35%),
-radial-gradient(circle at 50% 80%,rgba(0,255,180,.06),transparent 40%);
-filter:blur(90px);
-animation:aurora 18s linear infinite;
+
+radial-gradient(circle at 20% 20%,rgba(61,213,255,.10),transparent 35%),
+
+radial-gradient(circle at 80% 15%,rgba(255,215,0,.08),transparent 30%),
+
+radial-gradient(circle at 50% 85%,rgba(61,213,255,.08),transparent 35%);
+
+filter:blur(80px);
+
+animation:backgroundMove 18s linear infinite;
+
 z-index:-3;
+
 }
 
-@keyframes aurora{
-0%{transform:rotate(0deg) scale(1);}
-50%{transform:rotate(180deg) scale(1.15);}
-100%{transform:rotate(360deg) scale(1);}
+@keyframes backgroundMove{
+
+0%{
+transform:rotate(0deg) scale(1);
 }
 
-/* Grid */
+50%{
+transform:rotate(180deg) scale(1.12);
+}
+
+100%{
+transform:rotate(360deg) scale(1);
+}
+
+}
+
+/* Circuit Grid */
 
 body::after{
+
 content:"";
+
 position:fixed;
+
 inset:0;
+
 background-image:
-linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),
-linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);
-background-size:38px 38px;
+
+linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+
+linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+
+background-size:40px 40px;
+
+pointer-events:none;
+
 z-index:-2;
+
 }
 
-/* Card */
+/* ===========================
+MAIN CARD
+=========================== */
 
 .card{
+
 width:100%;
+
 max-width:430px;
-padding:30px 24px;
-border-radius:30px;
+
 background:rgba(255,255,255,.06);
+
 backdrop-filter:blur(22px);
-border:1px solid rgba(255,255,255,.1);
-box-shadow:0 30px 70px rgba(0,0,0,.75);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:30px;
+
+padding:30px 24px;
+
+box-shadow:0 25px 60px rgba(0,0,0,.65);
+
+position:relative;
+
+overflow:hidden;
+
 animation:fadeUp .8s ease;
+
 }
 
 @keyframes fadeUp{
+
 from{
 opacity:0;
-transform:translateY(40px);
+transform:translateY(35px);
 }
+
 to{
 opacity:1;
 transform:translateY(0);
 }
+
 }
 
 .top{
+
 text-align:center;
+
 }
 
 .logo-ring{
-width:130px;
-height:130px;
+
+width:135px;
+
+height:135px;
+
 margin:auto;
+
 padding:4px;
+
 border-radius:50%;
+
 background:linear-gradient(135deg,#3dd5ff,#ffd700);
+
+box-shadow:
+
+0 0 20px rgba(61,213,255,.25),
+
+0 0 20px rgba(255,215,0,.12);
+
 }
 
 .logo-inner{
+
 width:100%;
+
 height:100%;
+
 padding:4px;
+
+background:#080808;
+
 border-radius:50%;
-background:#0b0b0b;
+
 }
 
 .profile{
+
 width:100%;
+
 height:100%;
+
 border-radius:50%;
+
 object-fit:cover;
+
 display:block;
+
 }
+/* ===========================
+HEADER
+=========================== */
 
 h1{
-margin-top:18px;
-font-size:28px;
-font-weight:700;
+
+margin-top:20px;
+
+font-size:29px;
+
+font-weight:800;
+
 letter-spacing:1px;
+
 background:linear-gradient(90deg,#ffffff,#ffd700);
+
 -webkit-background-clip:text;
+
 -webkit-text-fill-color:transparent;
+
 }
 
 .tagline{
+
 margin-top:8px;
+
 font-size:14px;
-color:#bdbdbd;
+
+font-weight:500;
+
+color:#c8c8c8;
+
+letter-spacing:.4px;
+
 }
 
 .location{
-margin-top:14px;
+
+margin-top:16px;
+
 display:flex;
+
 justify-content:center;
+
 align-items:center;
+
 gap:8px;
+
 font-size:13px;
-color:#d4d4d4;
+
+color:#d8d8d8;
+
 }
 
 .location i{
-color:#ff4d4d;
+
+color:#ff5b5b;
+
 }
 
 .status{
-margin-top:14px;
+
+margin-top:15px;
+
 display:inline-flex;
+
 align-items:center;
-gap:8px;
+
+gap:10px;
+
 padding:10px 18px;
-border-radius:50px;
+
+border-radius:999px;
+
 background:rgba(255,255,255,.05);
+
 border:1px solid rgba(255,255,255,.08);
+
 font-size:13px;
+
+font-weight:500;
+
 }
 
-.dot{
+.status .dot{
+
 width:8px;
+
 height:8px;
-background:#22ff66;
+
 border-radius:50%;
-box-shadow:0 0 10px #22ff66;
+
+background:#19ff66;
+
+box-shadow:0 0 12px #19ff66;
+
 animation:pulse 1.5s infinite;
+
 }
 
 @keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.6);opacity:.5;}
-100%{transform:scale(1);}
+
+0%{
+transform:scale(1);
+opacity:1;
 }
+
+50%{
+transform:scale(1.6);
+opacity:.5;
+}
+
+100%{
+transform:scale(1);
+opacity:1;
+}
+
+}
+
+/* Premium Divider */
 
 .premium-divider{
+
 width:100%;
-height:1px;
-margin:22px auto 0;
+
+height:2px;
+
+margin:24px 0 6px;
+
+border-radius:999px;
+
 background:linear-gradient(
 90deg,
-transparent,
-rgba(61,213,255,.35),
-rgba(255,215,0,.35),
-transparent);
+transparent 0%,
+rgba(61,213,255,.55) 25%,
+rgba(255,215,0,.55) 50%,
+rgba(61,213,255,.55) 75%,
+transparent 100%
+);
+
+box-shadow:
+0 0 10px rgba(61,213,255,.18),
+0 0 10px rgba(255,215,0,.12);
+
 }
-/* ==========================
+   /* ===========================
 CONTACT SECTION
-========================== */
+=========================== */
 
 .contact-section{
+
 display:flex;
-align-items:center;
+
 gap:18px;
-margin-top:28px;
+
+align-items:flex-start;
+
+margin-top:26px;
+
 }
 
 .qr-box{
+
 width:145px;
+
 display:flex;
+
 flex-direction:column;
+
 align-items:center;
+
 }
 
 .qr-frame{
+
 position:relative;
+
 padding:10px;
+
 background:#fff;
+
 border-radius:18px;
-animation:qrGlow 3s ease-in-out infinite;
+
+box-shadow:
+0 0 18px rgba(61,213,255,.18);
+
 }
 
 .qr-frame img{
-width:125px;
-height:125px;
-display:block;
-border-radius:10px;
-}
 
-@keyframes qrGlow{
-0%,100%{
-box-shadow:0 0 12px rgba(61,213,255,.35);
-}
-50%{
-box-shadow:
-0 0 22px rgba(61,213,255,.75),
-0 0 40px rgba(61,213,255,.30);
-}
+width:125px;
+
+height:125px;
+
+display:block;
+
+border-radius:10px;
+
+background:#fff;
+
 }
 
 .corner{
+
 position:absolute;
+
 width:16px;
+
 height:16px;
+
 border:3px solid #3dd5ff;
+
 }
 
 .tl{
+
 top:-4px;
+
 left:-4px;
+
 border-right:none;
+
 border-bottom:none;
+
 }
 
 .tr{
+
 top:-4px;
+
 right:-4px;
+
 border-left:none;
+
 border-bottom:none;
+
 }
 
 .bl{
+
 bottom:-4px;
+
 left:-4px;
+
 border-right:none;
+
 border-top:none;
+
 }
 
 .br{
+
 bottom:-4px;
+
 right:-4px;
+
 border-left:none;
+
 border-top:none;
+
 }
 
 .scan-text{
+
 margin-top:10px;
+
 font-size:10px;
+
 letter-spacing:3px;
+
 font-weight:700;
-color:#d7d7d7;
+
+color:#d5d5d5;
+
 }
 
 .contact-info{
+
 flex:1;
+
 display:flex;
+
 flex-direction:column;
-gap:12px;
-}
 
-.info{
-display:flex;
-align-items:center;
 gap:14px;
-padding:14px;
-border-radius:16px;
+
+}
+
+/* PHONE BOX */
+
+.phone-box{
+
 background:rgba(255,255,255,.05);
+
 border:1px solid rgba(255,255,255,.08);
+
 border-left:3px solid #3dd5ff;
+
+border-radius:18px;
+
+overflow:hidden;
+
+}
+
+.phone-row{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+padding:14px;
+
 text-decoration:none;
+
 color:#fff;
+
 transition:.3s;
+
 }
 
-.info:hover{
-transform:translateY(-3px);
+.phone-row:hover{
+
+background:rgba(255,255,255,.05);
+
+}
+
+.phone-divider{
+
+height:1px;
+
 background:rgba(255,255,255,.08);
+
+margin:0 14px;
+
 }
 
-.email-card{
+/* EMAIL BOX */
+
+.email-box{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+padding:14px;
+
+background:rgba(255,215,0,.06);
+
+border:1px solid rgba(255,215,0,.18);
+
 border-left:3px solid #ffd700;
+
+border-radius:18px;
+
+text-decoration:none;
+
+color:#fff;
+
+transition:.3s;
+
 }
 
-.info i{
-font-size:20px;
-width:24px;
-text-align:center;
+.email-box:hover{
+
+background:rgba(255,215,0,.10);
+
 }
 
 .phone-icon{
+
 color:#3dd5ff;
+
+font-size:20px;
+
+width:24px;
+
+text-align:center;
+
 }
 
 .email-icon{
+
 color:#ffd700;
+
+font-size:20px;
+
+width:24px;
+
+text-align:center;
+
 }
 
 .label{
+
 font-size:12px;
+
 font-weight:600;
+
 opacity:.7;
+
 }
 
 .value{
+
 font-size:14px;
+
 font-weight:500;
+
 }
-   /* ==========================
+
+/* ===========================
+MOBILE RESPONSIVE
+=========================== */
+
+@media(max-width:520px){
+
+.contact-section{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.qr-box{
+
+width:100%;
+
+}
+
+.contact-info{
+
+width:100%;
+
+}
+
+.qr-frame img{
+
+width:150px;
+
+height:150px;
+
+}
+
+}
+   /* ===========================
 FOLLOW US
-========================== */
+=========================== */
 
 .follow{
+
 display:flex;
+
 align-items:center;
-gap:12px;
-margin:30px 0 18px;
+
+gap:14px;
+
+margin:30px 0 22px;
+
 }
 
 .follow .line{
+
 flex:1;
-height:1px;
+
+height:2px;
+
+border-radius:999px;
+
 background:linear-gradient(
 90deg,
 transparent,
-rgba(61,213,255,.35),
-rgba(255,215,0,.35),
+rgba(61,213,255,.45),
+rgba(255,215,0,.45),
 transparent
 );
+
 }
 
 .follow .text{
+
 font-size:11px;
+
+font-weight:700;
+
 letter-spacing:3px;
-color:#bdbdbd;
-font-weight:600;
+
+color:#cfcfcf;
+
+white-space:nowrap;
+
 }
 
-/* ==========================
+/* ===========================
 SOCIALS
-========================== */
+=========================== */
 
 .socials{
+
 display:flex;
+
 justify-content:center;
-gap:14px;
-margin:18px 0 24px;
+
+gap:16px;
+
+margin-bottom:28px;
+
 }
 
 .socials a{
-width:46px;
-height:46px;
+
+width:50px;
+
+height:50px;
+
+border-radius:16px;
+
 display:flex;
-align-items:center;
+
 justify-content:center;
-border-radius:14px;
+
+align-items:center;
+
 background:rgba(255,255,255,.05);
+
 border:1px solid rgba(255,255,255,.08);
+
 text-decoration:none;
-transition:.3s;
+
+transition:.35s;
+
+font-size:21px;
+
 }
 
 .socials a:hover{
-transform:translateY(-4px) scale(1.05);
-background:rgba(61,213,255,.08);
+
+transform:translateY(-5px);
+
+background:rgba(255,255,255,.08);
+
+box-shadow:0 0 20px rgba(61,213,255,.18);
+
 }
 
 .fa-facebook-f{color:#1877F2;}
@@ -406,279 +780,340 @@ background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#bc1888);
 -webkit-text-fill-color:transparent;
 }
 
-.fa-tiktok{color:#ffffff;}
-.fa-x-twitter{color:#ffffff;}
-
-/* ==========================
-BUTTONS
-========================== */
-
-.btn-row{
-display:flex;
-gap:12px;
-margin-top:10px;
+.fa-tiktok{
+color:#ffffff;
 }
 
-.save-btn,
-.share-btn{
+.fa-x-twitter{
+color:#ffffff;
+}
+
+/* ===========================
+BUTTONS
+=========================== */
+
+.btn-row{
+
+display:flex;
+
+gap:12px;
+
+margin-bottom:24px;
+
+}
+
+.btn{
+
 flex:1;
-padding:14px;
-border-radius:14px;
-font-size:14px;
-font-weight:600;
-cursor:pointer;
+
+padding:15px;
+
 border:none;
-transition:.3s;
+
+border-radius:16px;
+
+font-size:14px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.35s;
+
 }
 
 .save-btn{
-background:rgba(61,213,255,.15);
-border:1px solid rgba(61,213,255,.35);
+
+background:linear-gradient(135deg,#3dd5ff,#2aa8d6);
+
 color:#fff;
+
 }
 
 .save-btn:hover{
-transform:translateY(-2px);
-box-shadow:0 0 18px rgba(61,213,255,.35);
+
+transform:translateY(-3px);
+
+box-shadow:0 0 22px rgba(61,213,255,.35);
+
 }
 
 .share-btn{
-background:rgba(255,215,0,.12);
-border:1px solid rgba(255,215,0,.40);
-color:#ffd700;
+
+background:linear-gradient(135deg,#ffd700,#d6b100);
+
+color:#111;
+
 }
 
 .share-btn:hover{
-transform:translateY(-2px);
-box-shadow:0 0 18px rgba(255,215,0,.30);
+
+transform:translateY(-3px);
+
+box-shadow:0 0 22px rgba(255,215,0,.30);
+
 }
 
-/* ==========================
+/* ===========================
 FOOTER
-========================== */
+=========================== */
 
 .footer{
-margin-top:22px;
+
 text-align:center;
+
 font-size:12px;
-color:#777;
-letter-spacing:.5px;
+
+color:#8e8e8e;
+
+line-height:1.8;
+
+padding-top:10px;
+
+border-top:1px solid rgba(255,255,255,.06);
+
 }
 
-/* ==========================
+/* ===========================
 TOAST
-========================== */
+=========================== */
 
 #toast{
+
 position:fixed;
+
 left:50%;
-bottom:24px;
+
+bottom:25px;
+
 transform:translateX(-50%);
+
 background:#111;
-color:#fff;
-padding:12px 18px;
-border-radius:10px;
+
+padding:12px 22px;
+
+border-radius:12px;
+
 border:1px solid rgba(255,255,255,.1);
+
 opacity:0;
+
 transition:.3s;
+
 z-index:999;
+
 }
 
 #toast.show{
+
 opacity:1;
-}
-   .info-group{
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.08);
-border-radius:18px;
-overflow:hidden;
+
 }
 
-.info-row{
-display:flex;
-align-items:center;
-gap:14px;
-padding:15px;
-text-decoration:none;
-color:#fff;
-transition:.3s;
-}
-
-.info-row:hover{
-background:rgba(255,255,255,.06);
-}
-
-.divider{
-height:1px;
-background:rgba(255,255,255,.08);
-margin:0 15px;
-}
+/* ===========================
+END OF CSS
+=========================== */
 
 </style>
-</head>
 
+</head>
 <body>
 
 <div class="card">
 
-    <div class="top">
+<div class="top">
 
-        <div class="logo-ring">
-            <div class="logo-inner">
-                <img src="profile.png" class="profile" alt="Achex Tech Hub">
-            </div>
-        </div>
+<div class="logo-ring">
 
-        <h1>ACHEX TECH HUB</h1>
+<div class="logo-inner">
 
-        <div class="tagline">
-            Built For Performance • Chosen For You
-        </div>
-
-        <div class="location">
-            <i class="fa-solid fa-location-dot"></i>
-            Embu, Kenya
-        </div>
-
-        <div class="status">
-            <span class="dot"></span>
-            Open for Business
-        </div>
-
-        <div class="premium-divider"></div>
-
-    </div>
-
-    <div class="contact-section">
-
-        <div class="qr-box">
-
-            <div class="qr-frame">
-
-                <span class="corner tl"></span>
-                <span class="corner tr"></span>
-                <span class="corner bl"></span>
-                <span class="corner br"></span>
-
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://achexhub.github.io/achex-tech-hub/" alt="QR Code">
-
-            </div>
-
-            <div class="scan-text">
-                SCAN TO VISIT
-            </div>
-
-        </div>
-
-        <div class="contact-info">
-
-    <div class="info-group">
-
-        <a class="info-row" href="tel:+254706056515">
-            <i class="fa-solid fa-mobile-screen-button phone-icon"></i>
-            <div>
-                <div class="label">Phone</div>
-                <div class="value">+254 706 056 515</div>
-            </div>
-        </a>
-
-        <div class="divider"></div>
-
-        <a class="info-row" href="tel:+254704817217">
-            <i class="fa-solid fa-mobile-screen-button phone-icon"></i>
-            <div>
-                <div class="label">Phone</div>
-                <div class="value">+254 704 817 217</div>
-            </div>
-        </a>
-
-        <div class="divider"></div>
-
-        <a class="info-row" href="mailto:achexhub@gmail.com">
-            <i class="fa-solid fa-envelope email-icon"></i>
-            <div>
-                <div class="label">Email</div>
-                <div class="value">achexhub@gmail.com</div>
-            </div>
-        </a>
-
-    </div>
+<img src="profile.png" class="profile" alt="Achex Tech Hub">
 
 </div>
-                    <div class="label">Email</div>
-                    <div class="value">achexhub@gmail.com</div>
-                </div>
 
-            </a>
+</div>
 
-        </div>
+<h1>ACHEX TECH HUB</h1>
 
-    </div>
+<p class="tagline">
+Built For Performance • Chosen For You
+</p>
 
-    <div class="follow">
+<div class="location">
+<i class="fa-solid fa-location-dot"></i>
+<span>Embu, Kenya</span>
+</div>
 
-        <div class="line"></div>
+<div class="status">
+<span class="dot"></span>
+Open for Business
+</div>
 
-        <div class="text">FOLLOW US</div>
+<div class="premium-divider"></div>
 
-        <div class="line"></div>
+</div>
 
-    </div>
-    <div class="socials">
+<div class="contact-section">
 
-    <a href="#" target="_blank" aria-label="Facebook">
-        <i class="fab fa-facebook-f"></i>
-    </a>
+<div class="qr-box">
 
-    <a href="https://wa.me/254704817217" target="_blank" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+<div class="qr-frame">
 
-    <a href="https://instagram.com/achex_tech_ke" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-    </a>
+<span class="corner tl"></span>
+<span class="corner tr"></span>
+<span class="corner bl"></span>
+<span class="corner br"></span>
 
-    <a href="https://vm.tiktok.com/ZS9jQc9FystjS-6hX4l/" target="_blank" aria-label="TikTok">
-        <i class="fab fa-tiktok"></i>
-    </a>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://achexhub.github.io/achex-tech-hub/" alt="QR Code">
 
-    <a href="https://x.com/achextech" target="_blank" aria-label="X">
-        <i class="fab fa-x-twitter"></i>
-    </a>
+</div>
+
+<div class="scan-text">
+SCAN TO VISIT
+</div>
+
+</div>
+
+<div class="contact-info">
+
+<!-- PHONE BOX -->
+
+<div class="phone-box">
+
+<a class="phone-row" href="tel:+254706056515">
+
+<i class="fa-solid fa-mobile-screen-button phone-icon"></i>
+
+<div>
+
+<div class="label">Phone</div>
+
+<div class="value">
++254 706 056 515
+</div>
+
+</div>
+
+</a>
+
+<div class="phone-divider"></div>
+
+<a class="phone-row" href="tel:+254704817217">
+
+<i class="fa-solid fa-mobile-screen-button phone-icon"></i>
+
+<div>
+
+<div class="label">Phone</div>
+
+<div class="value">
++254 704 817 217
+</div>
+
+</div>
+
+</a>
+
+</div>
+
+<!-- EMAIL -->
+
+<a class="email-box" href="mailto:achexhub@gmail.com">
+
+<i class="fa-solid fa-envelope email-icon"></i>
+
+<div>
+
+<div class="label">Email</div>
+
+<div class="value">
+achexhub@gmail.com
+</div>
+
+</div>
+
+</a>
+
+</div>
+
+</div>
+
+<div class="follow">
+
+<div class="line"></div>
+
+<div class="text">
+FOLLOW US
+</div>
+
+<div class="line"></div>
+
+</div>
+
+<div class="socials">
+
+<a href="#" title="Facebook">
+<i class="fab fa-facebook-f"></i>
+</a>
+
+<a href="https://wa.me/254704817217">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<a href="https://instagram.com/achex_tech_ke">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://x.com/achextech">
+<i class="fab fa-x-twitter"></i>
+</a>
+
+<a href="https://vm.tiktok.com/ZS9jQc9FystjS-6hX4l/">
+<i class="fab fa-tiktok"></i>
+</a>
 
 </div>
 
 <div class="btn-row">
 
-    <button class="save-btn" onclick="downloadVCF()">
-        📇 Save Contact
-    </button>
+<button class="btn save-btn" onclick="downloadVCF()">
+📇 Save Contact
+</button>
 
-    <button class="share-btn" onclick="shareCard()">
-        🔗 Share Card
-    </button>
+<button class="btn share-btn" onclick="shareCard()">
+🔗 Share Card
+</button>
 
 </div>
 
 <div class="footer">
-    © 2026 Achex Tech Hub
+
+Powered by <strong>Achex Tech Hub</strong><br>
+
+Built For Performance • Chosen For You
+
 </div>
 
 </div>
 
 <div id="toast"></div>
-
 <script>
 
 function showToast(message){
-    const toast=document.getElementById("toast");
-    toast.textContent=message;
-    toast.classList.add("show");
 
-    setTimeout(()=>{
-        toast.classList.remove("show");
-    },2000);
+const toast=document.getElementById("toast");
+
+toast.textContent=message;
+
+toast.classList.add("show");
+
+setTimeout(()=>{
+toast.classList.remove("show");
+},2000);
+
 }
+
+/* Save Contact */
 
 function downloadVCF(){
 
@@ -686,48 +1121,61 @@ const vcf=`BEGIN:VCARD
 VERSION:3.0
 FN:Achex Tech Hub
 ORG:Achex Tech Hub
-TEL:+254706056515
-TEL:+254704817217
+TEL;TYPE=CELL:+254706056515
+TEL;TYPE=CELL:+254704817217
 EMAIL:achexhub@gmail.com
-ADR:Embu, Kenya
+ADR:;;Embu;;;Kenya
+URL:https://achexhub.github.io/achex-tech-hub/
 END:VCARD`;
 
 const blob=new Blob([vcf],{type:"text/vcard"});
+
 const link=document.createElement("a");
 
 link.href=URL.createObjectURL(blob);
-link.download="AchexTechHub.vcf";
+
+link.download="Achex-Tech-Hub.vcf";
+
 link.click();
 
-showToast("Contact Saved");
+showToast("Contact saved successfully");
 
 }
+
+/* Share */
 
 async function shareCard(){
 
 const data={
+
 title:"Achex Tech Hub",
+
 text:"Built For Performance • Chosen For You",
-url:window.location.href
+
+url:"https://achexhub.github.io/achex-tech-hub/"
+
 };
+
+if(navigator.share){
 
 try{
 
-if(navigator.share){
 await navigator.share(data);
+
+}catch(e){}
+
 }else{
 
-await navigator.clipboard.writeText(window.location.href);
+navigator.clipboard.writeText(data.url);
 
-showToast("Link Copied");
+showToast("Website link copied");
 
 }
-
-}catch(err){}
 
 }
 
 </script>
 
 </body>
+
 </html>
